@@ -1,0 +1,8 @@
+~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-screensaver.xml
+~/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+~/.config/systemd/user/panelRefresh.service
+~/.config/systemd/user/panelRefresh.timer

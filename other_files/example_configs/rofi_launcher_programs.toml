@@ -1,0 +1,86 @@
+[Aliases]
+open_browser = "~/.local/share/rc67/rofi_utility_scripts/openBrowser.sh"
+wiki_search = "~/.local/share/rc67/rofi_utility_scripts/wikiSearch.sh"
+internet_archive_script = "~/.local/share/rc67/rofi_utility_scripts/internetArchive.sh"
+quick_tile = "~/.local/share/rc67/rofi_utility_scripts/quickTile.sh"
+live_streams_script = "~/.local/share/rc67/rofi_utility_scripts/liveStreams.sh"
+live_tv_script = "~/.local/share/rc67/rofi_utility_scripts/liveTV.sh"
+colour_picker_script = "~/.local/share/rc67/rofi_utility_scripts/xcolorColourPicker.sh"
+music_script = "~/.local/bin/music"
+
+[Programs]
+"Alacritty" = {icon = "utilities-terminal.svg", cmd = ["alacritty"]}
+"Audacity" = {icon = "audacity.svg", cmd = ["audacity"]}
+"Chromium" = {icon = "chromium.svg", cmd = ["chromium"]}
+"Cool Retro Term" = {icon = "cool-retro-term.svg", cmd = ["alacritty"]}
+"Cubiomes Viewer" = {icon = "minetest.svg", cmd = ["alacritty"]}
+"Firefox" = {icon = "firefox.svg", cmd = ["firefox"]}
+"GIMP" = {icon = "gimp.svg", cmd = ["gimp"]}
+"Google Earth" = {icon = "google-earth-pro.svg", cmd = ["google-earth-pro"]}
+"KDiskMark" = {icon = "kdiskmark.svg", cmd = ["kdiskmark"]}
+"kitty" = {icon = "kitty.svg", cmd = ["kitty"]}
+"KolourPaint" = {icon = "kolourpaint.svg", cmd = ["kolourpaint"]}
+"Leafpad" = {icon = "leafpad.svg", cmd = ["leafpad"]}
+"Lite XL" = {icon = "lite.svg", cmd = ["lite-xl"]}
+"Media UI" = {icon = "applications-games.svg", cmd = ["gamesUI"]}
+"Mousepad" = {icon = "mousepad.svg", cmd = ["mousepad"], alt_cmd = ["mousepad", "-o", "window"]}
+"mpv" = {icon = "mpv.svg", cmd = ["mpv", "--player-operation-mode=pseudo-gui"]}
+"MultiMC" = {icon = "multimc.svg", cmd = ["multimc"]}
+"Ristretto" = {icon = "ristretto.svg", cmd = ["ristretto"]}
+"Thunar" = {icon = "thunar.svg", cmd = ["thunar"]}
+"Xfce About" = {icon = "org.xfce.about.svg", cmd = ["xfce4-about"]}
+"Xfce Appearance" = {icon = "org.xfce.settings.appearance.svg", cmd = ["xfce4-appearance-settings"]}
+"Xfce Appfinder" = {icon = "org.xfce.appfinder.svg", cmd = ["xfce4-appfinder"]}
+"Xfce Display Settings" = {icon = "xfce4-display.svg", cmd = ["xfce4-display-settings"]}
+"Xfce Keyboard Settings" = {icon = "org.xfce.settings.keyboard.svg", cmd = ["xfce4-keyboard-settings"]}
+"Xfce Screenshooter" = {icon = "org.xfce.screenshooter.svg", cmd = ["xfce4-screenshooter"]}
+"Xfce Settings Editor" = {icon = "org.xfce.settings.manager.svg", cmd = ["xfce4-settings-editor"]}
+"Xfce Settings Manager" = {icon = "org.xfce.settings.editor.svg", cmd = ["xfce4-settings-manager"]}
+"Xfce Terminal" = {icon = "utilities-terminal.svg", cmd = ["xfce4-terminal"]}
+"Xfwm Settings" = {icon = "org.xfce.xfwm4.svg", cmd = ["xfwm4-settings"]}
+"Xfwm Tweaks" = {icon = "org.xfce.xfwm4-tweaks.svg", cmd = ["xfwm4-tweaks-settings"]}
+"xterm" = {icon = "xterm.svg", cmd = ["xterm"]}
+"Upscayl" = {icon = "upscayl.svg", cmd = ["upscayl"]}
+"VSCode" = {icon = "code.svg", cmd = ["code"]}
+"WiFi Hotspot" = {icon = "wihotspot.svg", cmd = ["wihotspot-gui"]}
+"Zathura" = {icon = "zathura.svg", cmd = ["zathura"]}
+"Raspberry Pi Imager" = {icon = "rpi-imager.svg", cmd = ["rpi-imager"]}
+
+"btop" = {icon = "btop.svg", cmd = ["alacritty", "-t", "btop", "-e", "btop"]}
+"cava" = {icon = "sonic-visualiser.svg", cmd = ["alacritty", "-t", "cava", "-e", "cava"]}
+"htop" = {icon = "htop.svg", cmd = ["alacritty", "-t", "htop", "-e", "htop"]}
+"Intel GPU Top" = {icon = "intel.svg", cmd = ["alacritty", "-t", "intel-gpu-top", "-e", "sudo", "intel_gpu_top"]}
+"GoTube" = {icon = "youtube.svg", cmd = ["alacritty", "-t", "GoTube", "-e", "gotube"]}
+"NetHogs" = {icon = "gnethogs.svg", cmd = ["alacritty", "-t", "nethogs", "-e", "nethogs"]}
+"Newsboat RSS" = {icon = "rss.svg", cmd = ["alacritty", "-t", "Newsboat", "-e", "sh", "-c", "newsboat; podboat"]}
+"pulsemixer" = {icon = "xfce4-pulseaudio-plugin.svg", cmd = ["alacritty", "-t", "pulsemixer", "-e", "pulsemixer"]}
+"qalc" = {icon = "qalculate.svg", cmd = ["alacritty", "-t", "qalc", "-e", "qalc"]}
+"ranger" = {icon = "org.kde.dolphin.svg", cmd = ["alacritty", "-t", "ranger", "-e", "ranger"]}
+"Soundboard" = {icon = "polyphone.svg", cmd = ["alacritty", "-t", "Soundboard", "-e", "soundboard"]}
+"YouTube Subscriptions" = {icon = "youtube.svg", cmd = ["alacritty", "-t", "GoTube", "-e", "gotube", "--subscriptions"]}
+
+"BBC News" = {icon = "liferea.svg", cmd = ["$open_browser", "https://www.bbc.co.uk/news"]}
+"Discord" = {icon = "utilities-terminal.svg", cmd = ["$open_browser", "https://discord.com/channels/@me"]}
+"FlightRadar24" = {icon = "utilities-terminal.svg", cmd = ["$open_browser", "https://www.flightradar24.com/£LAT:5,£LON:5/9"]}
+"Gemini" = {icon = "google-chat.svg", cmd = ["$open_browser", "https://gemini.google.com/app"]}
+"Google Maps" = {icon = "maps.svg", cmd = ["$open_browser", "https://www.google.co.uk/maps/@£LAT,£LON,10z"]}
+"Munzee" = {icon = "midterm.svg", cmd = ["$open_browser", "https://www.munzee.com/map/£GEOHASH:9/13"]}
+"Observations MetOffice" = {icon = "weather.svg", cmd = ["$open_browser", "https://www.metoffice.gov.uk/weather/observations/£GEOHASH:12"]}
+"OpenStreetMap" = {icon = "maps-alt.svg", cmd = ["$open_browser", "https://www.openstreetmap.org/#map=12/£LAT/£LON"]}
+"Pro Cycling Stats" = {icon = "qdirstat.svg", cmd = ["$open_browser", "https://www.procyclingstats.com/index.php"]}
+"RealTimeTrans" = {icon = "com.github.lainsce.timetable.svg", cmd = ["$open_browser", "https://www.realtimetrains.co.uk/"]}
+"RideWithGPS" = {icon = "maps-alt.svg", cmd = ["$open_browser", "https://ridewithgps.com/routes/new"]}
+"Sudoku" = {icon = "gnome-sudoku.svg", cmd = ["$open_browser", "https://sudoku.com/"]}
+"Sunrise and Sunset" = {icon = "preferences-system-time.svg", cmd = ["$open_browser", "https://www.timeanddate.com/sun/@£LAT:5,£LON:5"]}
+"Weather MetOffice" = {icon = "weather.svg", cmd = ["$open_browser", "https://www.metoffice.gov.uk/weather/forecast/£GEOHASH:12"]}
+
+"Internet Archive" = {icon = "internet-archive.svg", cmd = ["$internet_archive_script"]}
+"Live Streams" = {icon = "com.github.artemanufrij.playmyvideos.svg", cmd = ["$live_streams_script"]}
+"Live TV" = {icon = "tvtime.svg", cmd = ["$live_tv_script"]}
+"Minecraft Wiki" = {icon = "minecraft.svg", cmd = ["$wiki_search", "https://minecraft.wiki/api.php?", "https://minecraft.wiki/wiki/", "https://minecraft.wiki/", "Minecraft Wiki"]}
+"Play Music" = {icon = "deepin-music.svg", cmd = ["$music_script", "--choice"]}
+"Quick Tile" = {icon = "x-tile.svg", cmd = ["$quick_tile"]}
+"Reindex Files" = {icon = "freefilesync.svg", cmd = ["~/.local/bin/rofi_launcher", "--reindex"]}
+"Terraria Wiki" = {icon = "terraria.svg", cmd = ["$wiki_search", "https://terraria.wiki.gg/api.php?", "https://terraria.wiki.gg/wiki/", "https://terraria.wiki.gg/wiki/Terraria_Wiki", "Terraria Wiki"]}
+"Wikipedia" = {icon = "wikipedia.svg", cmd = ["$wiki_search", "https://en.wikipedia.org/w/api.php?", "https://en.wikipedia.org/wiki/", "https://en.wikipedia.org/wiki/Main_Page", "Wikipedia"]}
+"XColor Colour Picker" = {icon = "colorgrab.svg", cmd = ["$colour_picker_script"]}
