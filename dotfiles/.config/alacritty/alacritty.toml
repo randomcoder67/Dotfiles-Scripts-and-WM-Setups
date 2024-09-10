@@ -1,0 +1,40 @@
+#### SUBSTITUTE - COLOURSCHEME
+
+#### SUBSTITUTE - FONT
+
+[window]
+dynamic_padding = true
+#dynamic_title = false
+
+[window.dimensions]
+columns = 100
+lines = 25
+
+# https://mitjafelicijan.com/alacritty-open-links-with-modifier.html
+[[hints.enabled]]
+command = "xdg-open"
+post_processing = true
+regex = "(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;5;9~"
+key = "Tab"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;6;9~"
+key = "Tab"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0019"
+key = "z"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+key = "F11"
+action = "ToggleFullscreen"

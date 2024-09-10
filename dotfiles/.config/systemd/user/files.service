@@ -1,0 +1,9 @@
+[Unit]
+Description=Run checkfiles program 
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/rofi_launcher --reindex
+
+[Install]
+WantedBy=default.target
