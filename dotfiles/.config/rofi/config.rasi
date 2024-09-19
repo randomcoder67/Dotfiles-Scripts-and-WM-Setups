@@ -4,4 +4,4 @@ configuration {
 	kb-cancel: ["Alt+F1","Escape"];
 	kb-accept-alt: "Shift+w";
 }
-@theme "~/.local/share/rofi/themes/dracula.rasi"
+@theme "~/.local/share/rofi/themes/jmbi.rasi"

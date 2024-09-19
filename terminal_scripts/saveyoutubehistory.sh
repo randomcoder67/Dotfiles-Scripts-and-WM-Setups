@@ -39,5 +39,8 @@ echo "$output" | jq '.entries[] | [.title,.channel,.url] | @csv' | tac >> "${dir
 cat -n "${dirName}/${fileName}" | sort -uk2 | sort -n | cut -f2- > "/tmp/youtubeHistoryTemp.csv"
 mv "/tmp/youtubeHistoryTemp.csv" "${dirName}/${fileName}"
 
+echo "Reindexing Background Noise Playlist"
+backgroundnoise --update
+
 # Ensure all videos in certain playlist downloaded
 syncvideos
