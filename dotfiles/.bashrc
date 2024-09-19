@@ -360,7 +360,7 @@ export HISTCONTROL=ignoreboth:erasedups
 export MICRO_TRUECOLOR=1
 export PASSWORD_STORE_CLIP_TIME=120
 
-[ -f ~/Programs/myStuff/aliases.sh ] && source ~/Programs/myStuff/aliases.sh
+[ -f ~/Programs/localStuff/aliases.sh ] && source ~/Programs/localStuff/aliases.sh
 
 export _FASD_NOCASE=1
 eval "$(fasd --init auto)"

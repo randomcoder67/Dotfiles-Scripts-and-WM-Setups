@@ -1,0 +1,12 @@
+~/.config/conky/conky_i3.conf
+~/.config/conky/clock_settings_i3.conf
+~/.config/i3/config
+~/.config/i3/toggle_desktop.sh
+~/.config/picom/picom.conf
+~/.config/i3status/config
+~/.config/i3/i3_volume.sh
+~/.config/i3/i3_panel_stream_checker.sh
+~/.config/i3/panel_background_script.sh
+~/.config/i3/firefox_new_tab.sh
+~/.config/i3/window-tool.py
+

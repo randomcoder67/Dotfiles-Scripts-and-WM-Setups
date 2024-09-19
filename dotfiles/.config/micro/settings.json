@@ -1,7 +1,8 @@
 {
     "autoclose": false,
-    "colorscheme": "draculacustom",
+    "colorscheme": "jmbi",
     "hlsearch": true,
+    "savecursor": true,
     "softwrap": true,
-    "savecursor": true
+    "ftoptions": false
 }

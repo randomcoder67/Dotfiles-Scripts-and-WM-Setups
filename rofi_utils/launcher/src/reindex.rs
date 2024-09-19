@@ -15,6 +15,7 @@ pub struct Config {
 	pub icons: bool,
 	pub check_locations_recursive: Vec<String>,
 	pub check_locations: Vec<String>,
+	pub ignore_locations: Vec<String>,
 	pub icon_path: String,
 	pub allowed_extensions: Vec<String>,
 	pub file_extension_icons: HashMap<String, String>,
@@ -26,6 +27,7 @@ struct ParsedConfig {
 	icons: Option<bool>,
 	check_locations_recursive: Option<Vec<String>>,
 	check_locations: Option<Vec<String>>,
+	ignore_locations: Option<Vec<String>>,
 	icon_path: Option<String>,
 	allowed_extensions: Option<Vec<String>>,
 	file_extension_icons: Option<HashMap<String, String>>,
@@ -69,6 +71,11 @@ pub fn parse_config() -> Config {
 		Some(v) => v,
 		None => Vec::new(),
 	};
+
+	let ignore_locations = match parsed_config.ignore_locations {
+		Some(v) => v,
+		None => Vec::new(),
+	};
 	
 	let icons = match parsed_config.icons {
 		Some(b) => b,
@@ -100,6 +107,7 @@ pub fn parse_config() -> Config {
 		icons,
 		check_locations_recursive,
 		check_locations,
+		ignore_locations,
 		icon_path,
 		allowed_extensions,
 		file_extension_icons,

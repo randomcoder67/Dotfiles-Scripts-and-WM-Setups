@@ -9,6 +9,7 @@
     "Ctrl-O": "IndentLine",
     "Ctrl-Q": "QuitAll",
     "Ctrl-S": "Save",
+    "Ctrl-R": "command-edit:replaceall ",
     "Ctrl-U": "OutdentLine",
     "Ctrl-W": "Quit",
     "CtrlBackslash": "Redo",

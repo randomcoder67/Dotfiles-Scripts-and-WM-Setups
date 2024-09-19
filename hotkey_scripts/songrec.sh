@@ -4,7 +4,13 @@
 
 notify-send -t 9000 "Listening to audio"
 # Listen for song with songrec, timeout of 10s incase the song can't be recognised
-song=$(timeout 10s songrec recognize -d "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Headphones__sink.monitor")
+song=""
+if pactl list sinks | grep -q "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Headphones__sink.monitor"; then
+	song=$(timeout 10s songrec recognize -d "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Headphones__sink.monitor")
+else
+	song=$(timeout 10s songrec recognize -d "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Speaker__sink.monitor")
+fi
+
 if ! [[ "$song" == "" ]]; then
 	notify-send -t 9000 "$song"
 	time=$(date +"%y%m%d %H:%M")

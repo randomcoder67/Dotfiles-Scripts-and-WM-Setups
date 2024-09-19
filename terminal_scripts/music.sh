@@ -7,6 +7,12 @@ favouritesDir="$HOME/Music/Favourites/"
 shuffleArgs="--shuffle=yes"
 toDownloadFile="$HOME/Videos/YouTube/toDownload.txt"
 
+className="mainfloating"
+if [[ "$1" == "--otherClassName" ]]; then
+	className="otherfloating"
+	shift
+fi
+
 # Music controls
 if [[ "$1" == "--next" ]]; then
 	echo "playlist-next" | socat - "$socketName"
@@ -84,7 +90,7 @@ fi
 
 # If no argument given, shuffle music from current playlist
 if [[ "$doArg" == "" ]]; then
-	/usr/bin/mpv --really-quiet --title='${metadata/title}'\ -\ '${metadata/artist}' --no-resume-playback --loop-playlist "$HOME/Music/CurrentPlaylist" "$shuffleArgs" "$backgroundArg1" "$backgroundArg2" --input-ipc-server="$socketName" & disown
+	/usr/bin/mpv --really-quiet --title='${metadata/title}'\ -\ '${metadata/artist}' --no-resume-playback --loop-playlist "$HOME/Music/CurrentPlaylist" "$shuffleArgs" "$backgroundArg1" "$backgroundArg2" --input-ipc-server="$socketName" --x11-name="$className" & disown
 # Present choice of playlists
 elif [[ "$doArg" == "--choice" ]]; then
 	playlists="All Music"$'\n'"New Music"$'\n'"$(find $HOME/Music/ -maxdepth 1 -mindepth 1 -type d | sort | sed 's/\([A-Z][a-z]\)/ \1/g' | sed 's/\([a-z]\)\([0-9]\)/\1 \2/g' | cut -d '/' -f 5 | sed 's/^ //g')"
@@ -112,10 +118,10 @@ elif [[ "$doArg" == "--choice" ]]; then
 	else
 		folder="$HOME/Music/$(echo $result | sed 's/ //g')"
 	fi
-	/usr/bin/mpv --really-quiet --title='${metadata/title}'\ -\ '${metadata/artist}' --no-resume-playback --loop-playlist "$folder" "$shuffleArgs" "$backgroundArg1" "$backgroundArg2" --input-ipc-server="$socketName" & disown
+	/usr/bin/mpv --really-quiet --title='${metadata/title}'\ -\ '${metadata/artist}' --no-resume-playback --loop-playlist "$folder" "$shuffleArgs" "$backgroundArg1" "$backgroundArg2" --input-ipc-server="$socketName" --x11-name="$className" & disown
 # Shuffle music of a particular artist (or artists with | to delimit)
 elif [[ "$doArg" == "-a" ]]; then
-	find "$HOME/Music/" -maxdepth 1 -type f | sort | grep -iE ".*-.* $2 .*-.*" | xargs -d '\n' /usr/bin/mpv --really-quiet --title='${metadata/title}'\ -\ '${metadata/artist}' --loop-playlist --no-resume-playback "$shuffleArgs" "$backgroundArg1" "$backgroundArg2" --input-ipc-server="$socketName" & disown
+	find "$HOME/Music/" -maxdepth 1 -type f | sort | grep -iE ".*-.* $2 .*-.*" | xargs -d '\n' /usr/bin/mpv --really-quiet --title='${metadata/title}'\ -\ '${metadata/artist}' --loop-playlist --no-resume-playback "$shuffleArgs" "$backgroundArg1" "$backgroundArg2" --input-ipc-server="$socketName" --x11-name="$className" & disown
 elif [[ "$doArg" == "-al" ]]; then
-	/usr/bin/mpv --really-quiet --title='${metadata/title}'\ -\ '${metadata/artist}' --no-resume-playback --loop-playlist "$HOME/Music" "$shuffleArgs" "$backgroundArg1" "$backgroundArg2" --input-ipc-server="$socketName" & disown
+	/usr/bin/mpv --really-quiet --title='${metadata/title}'\ -\ '${metadata/artist}' --no-resume-playback --loop-playlist "$HOME/Music" "$shuffleArgs" "$backgroundArg1" "$backgroundArg2" --input-ipc-server="$socketName" --x11-name="$className" & disown
 fi

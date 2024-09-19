@@ -1,0 +1,114 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 2
+        output_format = "i3bar"
+        markup = "pango"
+        color_good = "#efe2e0"
+        color_degraded = "#efe2e0"
+        color_bad = "#efe2e0"
+}
+
+order += "wireless _first_"
+order += "read_file stream1"
+order += "read_file stream2"
+order += "read_file stream3"
+order += "read_file stream4"
+order += "volume master"
+order += "battery all"
+order += "disk /"
+order += "load"
+order += "cpu_temperature 1"
+order += "memory"
+order += "tztime date"
+#order += "read_file time1"
+order += "tztime newyork"
+order += "tztime london"
+order += "tztime seoul"
+
+read_file stream1 {
+	path = "/tmp/panel_i3_data/panel_1.txt"
+}
+
+read_file stream2 {
+	path = "/tmp/panel_i3_data/panel_2.txt"
+}
+
+read_file stream3 {
+	path = "/tmp/panel_i3_data/panel_3.txt"
+}
+
+read_file stream4 {
+	path = "/tmp/panel_i3_data/panel_4.txt"
+}
+
+wireless _first_ {
+        format_up = "<span foreground='#bbbb88'> %quality at %essid </span>"
+        format_down = "<span foreground='#c25431'> down </span>"
+}
+
+ethernet _first_ {
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+battery all {
+        format = "<span foreground='#f9d25b'> %status %percentage </span>"
+        last_full_capacity = true
+}
+
+disk "/" {
+        format = "<span foreground='#709289'> %used </span>"
+}
+
+load {
+        format = "<span foreground='#bbbb88'> %1min/16 </span>"
+}
+
+cpu_temperature 1 {
+		format = "<span foreground='#c25431'> %degrees °C </span>"
+		#path = "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input"
+		path = "/sys/class/thermal/thermal_zone9/temp"
+}
+
+memory {
+        format = "<span foreground='#5a7260'> %used </span>"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+tztime date {
+        format = " %b, %a %d "
+}
+
+read_file time1 {
+	path = "/tmp/panel_i3_data/time.txt"
+}
+
+tztime newyork {
+		timezone = "America/New_York"
+        format = " %H:%M "
+}
+
+tztime london {
+		timezone = "Europe/London"
+        format = " %H:%M "
+}
+
+tztime seoul {
+		timezone = "Asia/Seoul"
+        format = " %H:%M "
+}
+
+volume master {
+	format = "<span foreground='#bbbb88'> %volume </span>"
+	format_muted = "<span foreground='#c25431'> %used (muted) </span>"
+	device = "default"
+}
