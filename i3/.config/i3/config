@@ -132,7 +132,7 @@ bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod1+Ctrl+r restart
 # exit i3 (logs you out of your X session)
@@ -256,6 +256,7 @@ client.placeholder      #F0F0F0 #0c0c0c #ffffff #000000   #F0F0F0
 
 bindsym Mod1+minus move scratchpad
 bindsym Mod1+w exec --no-startup-id "rofi -show window"
+bindsym $mod+Shift+c exec --no-startup-id "dunstctl close-all"
 
 #focus_wrapping no
 
