@@ -2,6 +2,13 @@
 
 [ -d "/tmp/panel_i3_data" ] || mkdir "/tmp/panel_i3_data"
 
+echo "<span foreground='#709289'>  </span>" > /tmp/panel_i3_data/panel_1_new.txt
+echo "<span foreground='#709289'>  </span>" > /tmp/panel_i3_data/panel_2_new.txt
+echo "<span foreground='#709289'>  </span>" > /tmp/panel_i3_data/panel_3_new.txt
+echo "<span foreground='#709289'>  </span>" > /tmp/panel_i3_data/panel_4_new.txt
+
+sleep 3
+
 while true; do
 	~/.config/i3/i3_panel_stream_checker.sh -c 1 > /tmp/panel_i3_data/panel_1_new.txt
 	echo "D:$(cat /tmp/panel_i3_data/panel_1_new.txt)" > /tmp/panel_i3_data/panel_1.txt

@@ -66,6 +66,7 @@ These programs aren't installed by the install script
 
 ### Other
 
+* [qimgv](https://github.com/easymodo/qimgv) - Image viewer - Good alternative to Ristretto when not using Xfce
 * [Lite XL](https://lite-xl.com/) - GUI text editor/IDE (sort of)
 
 ## Credits
