@@ -27,10 +27,10 @@ elif [[ "$1" == "--favourite" ]]; then
 			[[ "$filepath" == "$HOME/Videos/YouTube/NewMusic/"* ]] && trash-put "$filepath" || exit
 			file=$(echo '{ "command": ["get_property", "filename"] }' | socat - "$socketName" | jq .data -r | rev | cut -d "." -f 2- | rev)
 			echo "$file" >> "$toDownloadFile"
-			notify-send -t 9000 "Added to list and deleted"
+			notify-send -t 9000 -i emblem-music-symbolic "Added to list and deleted"
 		elif [[ "$2" == "--remove" ]]; then
 			[[ "$filepath" == "$HOME/Videos/YouTube/NewMusic/"* ]] && trash-put "$filepath" || exit
-			notify-send -t 9000 "Deleted"
+			notify-send -t 9000 -i emblem-music-symbolic "Deleted"
 		fi
 	fi
 	exit
@@ -61,12 +61,17 @@ if ps -ax | grep "/usr/bin/mpv --really-quiet --title=\${metadata/title} - \${me
 	paused=$(echo '{ "command": ["get_property", "pause"] }' | socat - "$socketName" | jq .data -r)
 	if [[ "$paused" == "true" ]]; then
 		echo "cycle pause" | socat - "$socketName"
-		notify-send -t 9000 "Music already active, unpausing"
+		notify-send -t 9000 -i emblem-music-symbolic "Music already active, unpausing"
 	else
 		toPrint="No Music Playing"
 		playlistCount=$(echo '{ "command": ["get_property", "playlist-count"] }' | socat - "$socketName" | jq .data -r)
 		playlistPos=$(echo '{ "command": ["get_property", "playlist-pos-1"] }' | socat - "$socketName" | jq .data -r)
 		filepath=$(echo '{ "command": ["get_property", "path"] }' | socat - "$socketName" | jq .data -r)
+
+		timePos=$(echo '{ "command": ["get_property", "time-pos"] }' | socat - "$socketName" | jq .data -r)
+		duration=$(echo '{ "command": ["get_property", "duration"] }' | socat - "$socketName" | jq .data -r)
+		progress=$(echo "result = ($timePos/$duration)*100; scale = 0; result/1" | bc -l)
+		
 		if [[ "$filepath" == "$HOME/Videos/YouTube/NewMusic"* ]]; then
 			file=$(echo '{ "command": ["get_property", "filename"] }' | socat - "$socketName" | jq .data -r | rev | cut -d "." -f 2- | rev)
 			toPrint="$file"
@@ -77,7 +82,7 @@ if ps -ax | grep "/usr/bin/mpv --really-quiet --title=\${metadata/title} - \${me
 				toPrint="${title} - ${artist}"
 			fi
 		fi
-		notify-send -t 9000 "Currently Playing (${playlistPos}/${playlistCount}):" "$toPrint"
+		notify-send -t 9000 -i emblem-music-symbolic "Currently Playing (${playlistPos}/${playlistCount}):" "$toPrint" -h int:value:"$progress"
 		fi
 	exit
 fi
