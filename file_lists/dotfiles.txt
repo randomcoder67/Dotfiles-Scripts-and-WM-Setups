@@ -45,6 +45,7 @@
 ~/.local/share/gtksourceview-4/styles/dracula.xml
 ~/.local/share/gtksourceview-4/styles/railscasts.xml
 ~/.local/share/rofi/themes/dracula.rasi
+~/.local/share/rofi/themes/jmbi.rasi
 ~/.config/conky/conky_xfce.conf
 ~/.config/conky/lua_round.lua
 ~/.config/conky/clock_settings_xfce

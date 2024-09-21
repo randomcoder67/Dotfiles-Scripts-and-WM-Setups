@@ -9,4 +9,4 @@
 ~/.config/i3/panel_background_script.sh
 ~/.config/i3/firefox_new_tab.sh
 ~/.config/i3/window-tool.py
-
+~/.config/dunst/dunstrc

@@ -1,0 +1,22 @@
+[global]
+frame_color = "#f9d25b"
+separator_color= frame
+font = "Roboto 12"
+icon_theme = "Papirus-Dark"
+enable_recursive_icon_lookup = true
+
+[urgency_low]
+background = "#1e1e1e"
+foreground = "#efe2e0"
+highlight = "#709289"
+
+[urgency_normal]
+background = "#1e1e1e"
+foreground = "#efe2e0"
+highlight = "#709289"
+
+[urgency_critical]
+background = "#1e1e1e"
+foreground = "#efe2e0"
+frame_color = "#c25431"
+highlight = "#709289"
