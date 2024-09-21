@@ -209,7 +209,7 @@ bindsym $mod+b exec --no-startup-id "alacritty -t btop -e btop"
 #### htop
 bindsym $mod+n exec --no-startup-id "alacritty -t nethogs -e nethogs"
 bindsym $mod+g exec --no-startup-id "alacritty -t pulsemixer -e pulsemixer"
-bindsym $mod+u exec --no-startup-id "alacritty -t cava -e cava"
+bindsym $mod+u exec --no-startup-id "alacritty --class cavafloating -t cava -e cava"
 bindsym $mod+x exec --no-startup-id "alacritty -t \\"System Menu\\" --class floating -o \\"window.dimensions.lines=26\\" -o \\"window.dimensions.columns=24\\" -e ~/.local/share/rc67/hotkey_scripts/systemmenu.sh"
 
 
@@ -241,7 +241,7 @@ exec --no-startup-id altgrtosuper
 exec --no-startup-id "conky -c ~/.config/conky/conky_i3.conf"
 exec --no-startup-id picom
 exec --no-startup-id "xinput set-prop 10 308 1"
-exec --no-startup-id "feh --no-fehbg --bg-scale ~/Pictures/nasa/osirisRExCapsule.jpg"
+exec --no-startup-id "feh --no-fehbg --bg-fill ~/Pictures/nasa/andromedaSpitzerSpaceTelescope.jpg"
 exec --no-startup-id "~/.config/i3/panel_background_script.sh"
 
 default_border pixel 5
@@ -262,6 +262,7 @@ bindsym Mod1+w exec --no-startup-id "rofi -show window"
 for_window [instance="mainfloating"] floating enable, move to workspace $ws5, move position 70 100
 for_window [instance="otherfloating"] floating enable, move to workspace $ws5, move position 70 800
 for_window [class="Conky"] move to workspace $ws5, floating enabled
+for_window [class="cavafloating"] floating enable, move to workspace $ws5, move position 70 750
 
 #for_window [class="Conky"] move to scratchpad
 #for_window [instance="mainfloating"] floating enable, resize set width 800 height 800, move to scratchpad

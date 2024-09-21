@@ -1,8 +1,8 @@
 {
     "autoclose": false,
     "colorscheme": "jmbi",
+    "ftoptions": false,
     "hlsearch": true,
     "savecursor": true,
-    "softwrap": true,
-    "ftoptions": false
+    "softwrap": true
 }

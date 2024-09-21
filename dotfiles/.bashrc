@@ -113,10 +113,10 @@ function cal () {
 }
 
 function tmux () {
-	oldterm="$TERM"
-	export TERM="xterm-kitty"
+	#oldterm="$TERM"
+	#export TERM="xterm-kitty"
 	/usr/bin/tmux "$@"
-	export TERM="$oldterm"
+	#export TERM="$oldterm"
 }
 
 # Git Aliases
