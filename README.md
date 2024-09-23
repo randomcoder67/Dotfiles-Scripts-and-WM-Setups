@@ -68,6 +68,7 @@ These programs aren't installed by the install script
 
 * [qimgv](https://github.com/easymodo/qimgv) - Image viewer - Good alternative to Ristretto when not using Xfce
 * [Lite XL](https://lite-xl.com/) - GUI text editor/IDE (sort of)
+* [Firefox JMBI Theme (Firefox Color link)[https://color.firefox.com/?theme=XQAAAAIYAQAAAAAAAABBqYhm849SCia2CaaEGccwS-xMDPr7eB5S1IAYgPpJmMqoaMV1vHoqGUJf97lZdbcDKNqH0I68EyLfHMR-s5xjAWw7b22vd5BC2-MdrN9xMaJiPOVs8LqhqtItbrjXhgN9Bu9c-khdEvgQxKJEkm6OXQT5vCs3BNlfcSB8xT42ZEczIVMtB0rp5TtWMi_TqGb0t2F_kFJliAgw2j3psR4qDwFv3_9MsKoA]
 
 ## Credits
 
