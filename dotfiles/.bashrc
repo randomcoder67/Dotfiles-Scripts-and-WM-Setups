@@ -136,6 +136,11 @@ alias remove='sudo pacman -Rs'
 alias update='sudo pacman -Syu'
 alias search='pacman -Ss'
 
+function pacs() {
+	numberOfPackages="$(pacman -Q | wc -l)"
+	echo "${numberOfPackages} packages installed"
+}
+
 # Bash/Terminal Functions
 
 ## Function to remove things which aren't useful from bash history
@@ -352,6 +357,8 @@ alias clearlogs='sudo journalctl --vacuum-time=2d'
 alias curloc='cat ~/.config/rc67/cur_location.csv | sed "s/|/\n/g"'
 alias todo='micro ~/Documents/todo.md'
 alias stonehenge='cat ~/.local/share/rc67/data/stonehenge.txt'
+
+source "$HOME/.local/share/rc67/data/autocompletion.bash"
 
 HISTSIZE=50000
 HISTFILESIZE=50000
