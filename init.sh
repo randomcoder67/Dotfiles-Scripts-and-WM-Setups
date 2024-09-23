@@ -35,12 +35,12 @@ elif [[ "$1" == "--install" ]]; then
 		sudo pacman -S \
 			papirus-icon-theme ttf-droid ttf-roboto ttf-roboto-mono noto-fonts noto-fonts-emoji noto-fonts-extra noto-fonts-cjk \
 			mousepad firefox imagemagick mpv \
-			songrec gimp alacritty cool-retro-term audacity zathura zathura-pdf-mupdf zathura-ps pinta \
+			songrec gimp alacritty cool-retro-term zathura zathura-pdf-mupdf zathura-ps pinta \
 			bc btop htop ncdu intel-gpu-tools pulsemixer nethogs vi micro tmux newsboat libqalculate \
 			unzip man man-pages bat duf ffmpeg mediainfo yt-dlp hyperfine glow jq neofetch tokei dust zip pass rsync perl-rename moreutils zbar speedtest-cli aria2 \
 			python-pillow python-mutagen python-requests python-pandas python-pipx python-cairo python-beautifulsoup4 python-lxml \
 			go make meson ninja gcc base-devel sassc strace valgrind \
-			libxtst libvoikko aspell-en hspell nuspell hunspell \
+			libxtst libvoikko aspell-en hspell nuspell hunspell libnotify \
 			xclip xdotool wmctrl xcolor \
 			socat rofi xdg-utils trash-cli pkg-config progress expect fuse gnome-keyring words net-tools perl-image-exiftool bash-completion smartmontools webp-pixbuf-loader \
 			pavucontrol alsa-firmware sof-firmware intel-media-driver pipewire pipewire-pulse pipewire-alsa \
