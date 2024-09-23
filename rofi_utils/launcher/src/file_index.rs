@@ -55,6 +55,7 @@ pub fn do_read_dir(dir: &str, allowed_extensions: &Vec<String>, mut files: Vec<(
 
 fn read_recursive(path: &mut PathBuf, allowed_extensions: &Vec<String>, mut files: Vec<(String, String)>, ignore_dirs: &Vec<String>, recursive: bool) -> Vec<(String, String)> {
 	for ignore in ignore_dirs {
+		//println!("{} {}", ignore, path.to_str().unwrap());
 		if path.to_str().unwrap() == ignore {
 			return files;
 		}
