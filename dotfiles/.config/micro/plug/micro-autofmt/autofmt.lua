@@ -44,7 +44,7 @@ end
 function doFmt(bp, fmtCmd)
     bp:Save()
     local dirPath, _ = filepath.Split(bp.Buf.AbsPath)
-    local _, err = os.execute("cd \"" .. dirPath .. "\"; " .. fmtCmd .. " " .. bp.Buf.AbsPath)
+    local _, err = os.execute("cd \"" .. dirPath .. "\"; " .. fmtCmd .. " \"" .. bp.Buf.AbsPath .. "\"")
     if err ~= nil then
         micro.InfoBar():Error(err)
         return
