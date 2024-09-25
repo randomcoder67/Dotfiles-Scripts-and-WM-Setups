@@ -52,12 +52,14 @@ liveTwitch="false"
 
 enabled="yes"
 
+prefix="${channelName:0:1}:"
+
 if [[ "$enabled" == "disabled" ]]; then
 	if [[ "$argA" == "-t" ]]; then
 		echo "<span foreground='#$disabledColour'>  </span>"
 		echo "disabled" > "$XDG_STATE_HOME/streams/${channelName}.txt"
 	else
-		echo "<span foreground='#f9d25b'>  </span>"
+		echo "${prefix}<span foreground='#f9d25b'>  </span>"
 	fi
 	exit
 fi
@@ -69,7 +71,7 @@ if [[ "$youtubeChannelAt" != "NONE" ]]; then
 			echo "<span foreground='#$noInternetColour'>  </span>"
 			echo "noInternet" > "$XDG_STATE_HOME/streams/${channelName}.txt"
 		else
-			echo "<span foreground='#709289'>  </span>"
+			echo "${prefix}<span foreground='#709289'>  </span>"
 		fi
 	
 	# Check for live status
@@ -81,7 +83,7 @@ if [[ "$youtubeChannelAt" != "NONE" ]]; then
 				echo "<span foreground='#$upcomingColour'>  </span>"
 				echo "notLive" > "$XDG_STATE_HOME/streams/${channelName}.txt"
 			else
-				echo "<span foreground='#bbbb88'>  </span>"
+				echo "${prefix}<span foreground='#bbbb88'>  </span>"
 			fi
 			liveYouTube="true"
 		# Or waiting for streamer
@@ -90,7 +92,7 @@ if [[ "$youtubeChannelAt" != "NONE" ]]; then
 				echo "<span foreground='#$upcomingColour'>  </span>"
 				echo "notLive" > "$XDG_STATE_HOME/streams/${channelName}.txt"
 			else
-				echo "<span foreground='#bbbb88'>  </span>"
+				echo "${prefix}<span foreground='#bbbb88'>  </span>"
 			fi
 			liveYouTube="true"
 		# Otherwise they are live now
@@ -99,7 +101,7 @@ if [[ "$youtubeChannelAt" != "NONE" ]]; then
 				echo "<span foreground='#$liveColour'>  </span>"
 				echo "youtube" > "$XDG_STATE_HOME/streams/${channelName}.txt"
 			else
-				echo "<span foreground='#c25431'>  </span>"
+				echo "${prefix}<span foreground='#c25431'>  </span>"
 			fi
 			liveYouTube="true"
 		fi
@@ -112,7 +114,7 @@ if [[ "$twitchAt" != "NONE" ]] && [[ "$liveYouTube" == "false" ]]; then
 			echo "<span foreground='#$liveColour'>  </span>"
 			echo "twitch" > "$XDG_STATE_HOME/streams/${channelName}.txt"
 		else
-			echo "<span foreground='#c25431'>  </span>"
+			echo "${prefix}<span foreground='#c25431'>  </span>"
 		fi
 		liveTwitch="true"
 	fi
@@ -130,6 +132,6 @@ if [[ "$liveYouTube" == "false" ]] && [[ "$liveTwitch" == "false" ]]; then
 		if [[ "$twitchAt" != "NONE" ]]; then
 			urlOpenString="${urlOpenString} --new-tab 'https://www.twitch.tv/${twitchAt}/videos?filter=archives&sort=time'"
 		fi
-		echo " <span foreground='#efe2e0'></span> "
+		echo "${prefix}<span foreground='#efe2e0'>  </span>"
 	fi
 fi

@@ -12,7 +12,7 @@ Make sure to run these commands while Xfce is not loaded (e.g. from the Arch con
 
 ## Features
 
-A minimal Xfce-4 setup designed not to get in the way, and use as little screen realestate as possible.
+A minimal Xfce-4 setup designed not to get in the way, and use as little screen real estate as possible.
 
 ### Panel
 

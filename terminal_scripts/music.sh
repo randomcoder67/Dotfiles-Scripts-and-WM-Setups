@@ -60,8 +60,8 @@ fi
 if ps -ax | grep "/usr/bin/mpv --really-quiet --title=\${metadata/title} - \${metadata/artist} --no-resume-playback --loop-playlist" | grep -vq "grep"; then
 	paused=$(echo '{ "command": ["get_property", "pause"] }' | socat - "$socketName" | jq .data -r)
 	if [[ "$paused" == "true" ]]; then
-		echo "cycle pause" | socat - "$socketName"
 		notify-send -t 9000 -i emblem-music-symbolic "Music already active, unpausing"
+		echo "cycle pause" | socat - "$socketName"
 	else
 		toPrint="No Music Playing"
 		playlistCount=$(echo '{ "command": ["get_property", "playlist-count"] }' | socat - "$socketName" | jq .data -r)

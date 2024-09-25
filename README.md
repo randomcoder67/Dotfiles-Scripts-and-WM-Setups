@@ -5,6 +5,7 @@
 | Name | Folder Name | Type |
 | :-: | :-: | :-: |	
 | [Xfce 4](info/xfce4.md) | `xfce/` | Lightweight Floating Window Manager and Desktop Environment |
+| [i3](info/i3.md) | `i3/` | Manual Tiling Window Manager |
 
 ## General Dotfiles
 

@@ -24,7 +24,8 @@ order += "read_file stream4"
 order += "volume master"
 order += "battery all"
 #order += "disk /"
-order += "load"
+#order += "load"
+order += "read_file cpu_usage"
 order += "cpu_temperature 1"
 order += "memory"
 order += "tztime date"
@@ -34,19 +35,23 @@ order += "tztime london"
 order += "tztime seoul"
 
 read_file stream1 {
-	path = "/tmp/panel_i3_data/panel_1.txt"
+	path = "/tmp/panel_i3_data/panel_stream_1.txt"
 }
 
 read_file stream2 {
-	path = "/tmp/panel_i3_data/panel_2.txt"
+	path = "/tmp/panel_i3_data/panel_stream_2.txt"
 }
 
 read_file stream3 {
-	path = "/tmp/panel_i3_data/panel_3.txt"
+	path = "/tmp/panel_i3_data/panel_stream_3.txt"
 }
 
 read_file stream4 {
-	path = "/tmp/panel_i3_data/panel_4.txt"
+	path = "/tmp/panel_i3_data/panel_stream_4.txt"
+}
+
+read_file cpu_usage {
+        path = "/tmp/panel_i3_data/panel_cpu.txt"
 }
 
 wireless _first_ {
