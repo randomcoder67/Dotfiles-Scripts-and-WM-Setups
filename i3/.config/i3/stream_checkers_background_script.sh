@@ -2,10 +2,10 @@
 
 [ -d "/tmp/panel_i3_data" ] || mkdir "/tmp/panel_i3_data"
 
-echo "<span foreground='#709289'>  </span>" > /tmp/panel_i3_data/panel_stream_1_new.txt
-echo "<span foreground='#709289'>  </span>" > /tmp/panel_i3_data/panel_stream_2_new.txt
-echo "<span foreground='#709289'>  </span>" > /tmp/panel_i3_data/panel_stream_3_new.txt
-echo "<span foreground='#709289'>  </span>" > /tmp/panel_i3_data/panel_stream_4_new.txt
+echo "<span foreground='#709289'>  </span>" > /tmp/panel_i3_data/panel_stream_1.txt
+echo "<span foreground='#709289'>  </span>" > /tmp/panel_i3_data/panel_stream_2.txt
+echo "<span foreground='#709289'>  </span>" > /tmp/panel_i3_data/panel_stream_3.txt
+echo "<span foreground='#709289'>  </span>" > /tmp/panel_i3_data/panel_stream_4.txt
 
 sleep 3
 

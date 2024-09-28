@@ -11,7 +11,7 @@ else
 fi
 
 function get_icon_name() {
-	if [[ "$1" == "0" ]]; then
+	if [[ "$1" == "0" ]] || [[ "$2" == "yes" ]]; then
 		echo "audio-volume-muted-symbolic"	
 	elif [[ "$1" -lt "30" ]]; then
 		echo "audio-volume-low-symbolic"	
@@ -24,8 +24,9 @@ function get_icon_name() {
 
 function show_notification() {
 	new_volume=$(pactl get-sink-volume @DEFAULT_SINK@ | head -n 1 | cut -d "/" -f 2 | sed "s/ //g" | sed 's/%//g')
+	mute_status=$(pactl get-sink-mute @DEFAULT_SINK@ | cut -d " " -f 2)
 	echo "$new_volume"
-	iconName="$(get_icon_name $new_volume)"
+	iconName="$(get_icon_name $new_volume $mute_status)"
 	echo "$iconName"
 	newId=$(notify-send "Volume" -p -r "$oldNotificationId" -i $iconName -h int:value:"$new_volume")
 	echo "$newId" > "$idFile"

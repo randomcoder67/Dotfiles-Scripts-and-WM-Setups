@@ -245,7 +245,8 @@ exec --no-startup-id "conky -c ~/.config/conky/conky_i3.conf"
 exec --no-startup-id picom
 exec --no-startup-id "xinput set-prop 10 308 1"
 exec --no-startup-id "feh --no-fehbg --bg-fill ~/Pictures/nasa/andromedaSpitzerSpaceTelescope.jpg"
-exec --no-startup-id "~/.config/i3/panel_background_script.sh"
+exec --no-startup-id "~/.config/i3/stream_checkers_background_script.sh"
+exec --no-startup-id "~/.config/i3/cpu_background_script.sh"
 exec --no-startup-id "xset dpms 0 0 0"
 exec --no-startup-id "xset s off"
 
