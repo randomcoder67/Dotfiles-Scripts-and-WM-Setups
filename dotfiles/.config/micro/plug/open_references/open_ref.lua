@@ -11,7 +11,7 @@ end
 
 function open_ref(bp)
 	--os.execute("cat " .. bp.Buf.AbsPath .. " | grep '^\\[' | rofi -dmenu -p 'Choose URL:' | cut -d ' ' -f 2 | xargs $BROWSER")
-	local handle = io.popen("grep http " .. bp.Buf.AbsPath .. " | rofi -dmenu -i -p \"Select URL\" | grep -Eo \"http[A-Za-z0-9._~:/?#@!$&'*+,;%=]*\"")
+	local handle = io.popen("grep http " .. bp.Buf.AbsPath .. " | rofi -dmenu -i -p \"Select URL\" | grep -Eo \"http[A-Za-z0-9._~:/?#@!$&'*+,;%=\-]*\"")
 	local result = handle:read("*a")
 	handle:close()
 	if result ~= "" then

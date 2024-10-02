@@ -69,6 +69,8 @@ mp-yt () {
 
 #### SUBSTITUTE - IMAGE VIEWER
 
+#### SUBSTITUTE - QUICK TEXT EDITOR
+
 # Open folder/files in Lite-XL
 lt () {
 	lite-xl "$@" & disown
@@ -173,7 +175,7 @@ trim_history () {
 	#sed --in-place 's/[[:space:]]\+$//' .bash_history && awk -i inplace '!seen[$0]++' .bash_history
 }
 
-alias c='clear'
+#alias c='clear'
 alias q='trim_history && exit'
 alias reload='. ~/.bashrc'
 
@@ -223,9 +225,9 @@ function sortfile () {
 
 function songs () {
 	if [[ "$1" == "-e" ]]; then
-		"$VISUAL" "$XDG_DATA_HOME/rc67/songs.txt"
+		"$VISUAL" "$XDG_DATA_HOME/rc67/script_data/songs.txt"
 	else
-		cat "$XDG_DATA_HOME/rc67/songs.txt"
+		cat "$XDG_DATA_HOME/rc67/script_data/songs.txt"
 	fi
 }
 
@@ -358,6 +360,13 @@ alias clearlogs='sudo journalctl --vacuum-time=2d'
 alias curloc='cat ~/.config/rc67/cur_location.csv | sed "s/|/\n/g"'
 alias todo='micro ~/Documents/todo.md'
 alias stonehenge='cat ~/.local/share/rc67/data/stonehenge.txt'
+
+# Only use this if the history in the current terminal is suddenly way shorter than it should be
+function restorebashhistory () {
+	history | sed 's/^[0-9]*[ ]*//g' > /tmp/new_history
+	cat "$HOME/Downloads/.bash_history_backup" /tmp/new_history > /tmp/all_history
+	mv /tmp/all_history "$HOME/.bash_history"
+}
 
 source "$HOME/.local/share/rc67/data/autocompletion.bash"
 
