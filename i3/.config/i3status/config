@@ -114,6 +114,6 @@ tztime seoul {
 
 volume master {
 	format = "<span foreground='#bbbb88'> %volume </span>"
-	format_muted = "<span foreground='#c25431'> %used (muted) </span>"
+	format_muted = "<span foreground='#c25431'> muted </span>"
 	device = "default"
 }

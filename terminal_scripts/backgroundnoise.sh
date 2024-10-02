@@ -11,6 +11,8 @@ if [[ "$1" == "--update" ]]; then
 elif [[ "$1" == "--play" ]]; then
 	user_choice=$(cat "$SAVE_FILE_LOC" | jq -r '.[0]' | rofi -dmenu -i -format d -p "Select Background Noise to Play")
 	[[ "$user_choice" == "" ]] && exit
+	[[ "$user_choice" == "0" ]] && exit
+	
 	url=$(cat "$SAVE_FILE_LOC" | jq -r '.[1]' | sed -n "${user_choice}p")
 	mpv --ytdl-format="best" --x11-name="otherfloating" --force-window=immediate --input-ipc-server="$socketName" "$url"
 fi

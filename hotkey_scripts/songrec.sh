@@ -15,7 +15,7 @@ if ! [[ "$song" == "" ]]; then
 	notify-send -t 9000 "$song"
 	time=$(date +"%y%m%d %H:%M")
 	# Added to file with timestamp
-	echo "$time $song" >> "$XDG_DATA_HOME/rc67/songs.txt"
+	echo "$time $song" >> "$XDG_DATA_HOME/rc67/script_data/songs.txt"
 else
 	notify-send -t 9000 "Failed to identify song"
 fi
