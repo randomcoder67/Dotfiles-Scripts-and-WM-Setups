@@ -17,8 +17,14 @@ elif [[ "$action" == "Hybrid Sleep" ]]; then
 elif [[ "$action" == "Hibernate" ]]; then
 	systemctl hibernate
 elif [[ "$action" == "Shutdown" ]]; then
+	tmux send-keys -t buffer_tmux.0 C-s
+	tmux send-keys -t buffer_tmux.0 C-q
+	tmux kill-session -t buffer_tmux
 	/usr/bin/shutdown -h 0
 elif [[ "$action" == "Reboot" ]]; then
+	tmux send-keys -t buffer_tmux.0 C-s
+	tmux send-keys -t buffer_tmux.0 C-q
+	tmux kill-session -t buffer_tmux
 	systemctl reboot
 elif [[ "$action" == "Arch Terminal" ]]; then
 	#sudo chvt 2

@@ -214,7 +214,7 @@ bindsym $mod+g exec --no-startup-id "alacritty -t pulsemixer -e pulsemixer"
 bindsym $mod+u exec --no-startup-id "alacritty --class cavafloating -t cava -e cava"
 #bindsym $mod+x exec --no-startup-id "alacritty -t \\"System Menu\\" --class floating -o \\"window.dimensions.lines=26\\" -o \\"window.dimensions.columns=24\\" -e ~/.local/share/rc67/hotkey_scripts/systemmenu.sh"
 bindsym $mod+x exec --no-startup-id "~/.config/i3/scratchpad.sh"
-bindsym $mod+Shift+x exec --no-startup-id "~/.config/i3/i3systemmenu.sh"
+bindsym $mod+Shift+x exec --no-startup-id "~/.config/i3/i3_systemmenu.sh"
 
 
 # Utilities

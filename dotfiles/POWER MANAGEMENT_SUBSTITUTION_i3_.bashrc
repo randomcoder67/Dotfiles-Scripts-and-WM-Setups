@@ -1,13 +1,23 @@
 ## Shutdown with confirmation
 shutdown () {
 	read -p "Shutdown? (y/N) " yesOrNoShutdown
-	[[ "$yesOrNoShutdown" == "y" ]] && /usr/bin/shutdown -h 0
+	if [[ "$yesOrNoShutdown" == "y" ]]; then
+		tmux send-keys -t buffer_tmux.0 C-s
+		tmux send-keys -t buffer_tmux.0 C-q
+		tmux kill-session -t buffer_tmux
+		/usr/bin/shutdown -h 0
+	fi
 }
 
 ## Reboot with confirmation
 reboot () {
 	read -p "Reboot? (y/N) " yesOrNoReboot
-	[[ "$yesOrNoReboot" == "y" ]] && systemctl reboot
+	if [[ "$yesOrNoReboot" == "y" ]]; then
+		tmux send-keys -t buffer_tmux.0 C-s
+		tmux send-keys -t buffer_tmux.0 C-q
+		tmux kill-session -t buffer_tmux
+		systemctl reboot
+	fi
 }
 
 ## Hibernate to disk with confirmation
