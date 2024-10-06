@@ -31,6 +31,7 @@ mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u001B[27;6;9~"
+#chars = "\u001B[24~"
 key = "Tab"
 mods = "Control|Shift"
 

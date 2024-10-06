@@ -250,7 +250,7 @@ exec --no-startup-id "~/.config/i3/stream_checkers_background_script.sh"
 exec --no-startup-id "~/.config/i3/cpu_background_script.sh"
 exec --no-startup-id "xset dpms 0 0 0"
 exec --no-startup-id "xset s off"
-exec --no-startup-id "alacritty --class terminalscratchpad -e tmux new-session 'micro ~/Downloads/buffer.md; bash'"
+exec --no-startup-id "~/.config/i3/scratchpad.sh -s"
 
 default_border pixel 5
 default_floating_border pixel 2
