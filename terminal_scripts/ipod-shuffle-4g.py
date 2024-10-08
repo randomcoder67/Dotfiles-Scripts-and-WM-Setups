@@ -33,7 +33,7 @@ def make_dir_if_absent(path):
 def raises_unicode_error(str):
     try:
         str.encode('latin-1')
-        if "é" in str or "ñ" in str:
+        if "é" in str or "ñ" in str or "å" in str or "ï" in str:
         	return True
         return False
     except (UnicodeEncodeError, UnicodeDecodeError):

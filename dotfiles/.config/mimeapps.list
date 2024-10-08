@@ -14,6 +14,7 @@ text/x-csrc=org.xfce.mousepad.desktop
 text/x-chdr=org.xfce.mousepad.desktop
 x-scheme-handler/https=firefox.desktop
 x-scheme-handler/http=firefox.desktop
+application/pdf=org.pwmt.zathura.desktop
 
 [Added Associations]
 application/x-powershell=org.xfce.mousepad.desktop;

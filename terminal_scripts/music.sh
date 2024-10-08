@@ -121,6 +121,8 @@ elif [[ "$doArg" == "--choice" ]]; then
 		folder="$HOME/Music"
 	elif [[ "$result" == "New Music" ]]; then
 		folder="$HOME/Videos/YouTube/NewMusic"
+	elif ! [ -d "$HOME/Music/$(echo $result | sed 's/ //g')" ]; then
+		exit
 	elif ! [[ $(find "$HOME/Music/$(echo $result | sed 's/ //g')" -type d | wc -l) == "1" ]]; then
 		playlists="$(find $HOME/Music/$(echo $result | sed 's/ //g') -maxdepth 1 -mindepth 1 -type d | sort | sed 's/\([A-Z][a-z]\)/ \1/g' | sed 's/\([a-z]\)\([0-9]\)/\1 \2/g' | cut -d '/' -f 6 | sed 's/^ //g')"
 		result_new=$(echo -e "$playlists" | rofi -dmenu -i -p "Select Subcategory of Music To Play" -kb-custom-1 "Shift+Return")

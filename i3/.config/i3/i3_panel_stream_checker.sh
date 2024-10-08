@@ -73,7 +73,7 @@ if [[ "$youtubeChannelAt" != "NONE" ]]; then
 		else
 			echo "${prefix}<span foreground='#709289'>  </span>"
 		fi
-	
+		exit
 	# Check for live status
 	elif grep -q "Pop-out chat" "${SAVE_LOC}/${channelName}YouTube.html"; then
 		# Check if stream scheduled
