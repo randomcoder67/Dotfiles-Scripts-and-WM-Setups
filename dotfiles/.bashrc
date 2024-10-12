@@ -137,6 +137,7 @@ alias install='sudo pacman -S'
 alias remove='sudo pacman -Rs'
 alias update='sudo pacman -Syu'
 alias search='pacman -Ss'
+alias paclog='cat /var/log/pacman.log | grep'
 
 function pacs() {
 	numberOfPackages="$(pacman -Q | wc -l)"

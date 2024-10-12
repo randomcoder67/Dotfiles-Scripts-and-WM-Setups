@@ -50,3 +50,4 @@
 ~/.config/conky/lua_round.lua
 ~/.config/conky/clock_settings_xfce
 ~/.config/conky/conky_clock.lua
+~/.config/X11/xresources

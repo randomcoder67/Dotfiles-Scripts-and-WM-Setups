@@ -50,6 +50,15 @@ def find_nth(haystack, needle, n):
 files = []
 if sys.argv[1] == ".":
 	files = [f for f in os.listdir('.') if os.path.isfile(f)]
+elif sys.argv[1] == "-e" or sys.argv[1] == "--extract-album-art":
+	art = getArt(sys.argv[2])
+	for i, a in enumerate(art):
+		print(str(i) + ": " + a[0] + " - " + a[1])
+	correctArt = input("Which art to use: ")
+	artToUse = art[int(correctArt)]
+	r = requests.get(artToUse[1])
+	open(sys.argv[3] + ".jpg", "wb").write(r.content)
+	exit()
 else:
 	files = [sys.argv[1]]
 

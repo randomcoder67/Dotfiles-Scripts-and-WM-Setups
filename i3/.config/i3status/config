@@ -80,8 +80,8 @@ load {
 cpu_temperature 1 {
         format = "<span foreground='#c25431'> %degrees °C </span>"
         #path = "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input"
-        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input"
-        #path = "/sys/class/thermal/thermal_zone9/temp"
+        #path = "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input"
+        path = "/sys/class/thermal/thermal_zone9/temp"
 }
 
 memory {
