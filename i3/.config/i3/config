@@ -92,7 +92,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-#bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
@@ -244,7 +244,7 @@ bindsym $mod+d exec --no-startup-id "~/.config/i3/toggle_desktop.sh"
 exec --no-startup-id altgrtosuper
 exec --no-startup-id "conky -c ~/.config/conky/conky_i3.conf"
 exec --no-startup-id "picom --backend xrender"
-exec --no-startup-id "xinput set-prop 10 308 1"
+exec --no-startup-id "xinput set-prop 10 310 1"
 exec --no-startup-id "feh --no-fehbg --bg-fill ~/Pictures/nasa/andromedaSpitzerSpaceTelescope.jpg"
 exec --no-startup-id "~/.config/i3/stream_checkers_background_script.sh"
 exec --no-startup-id "~/.config/i3/cpu_background_script.sh"

@@ -227,6 +227,8 @@ function sortfile () {
 function songs () {
 	if [[ "$1" == "-e" ]]; then
 		"$VISUAL" "$XDG_DATA_HOME/rc67/script_data/songs.txt"
+	elif [[ "$1" == "-n" ]]; then
+		"$VISUAL" "$HOME/Videos/YouTube/toDownload.txt"
 	else
 		cat "$XDG_DATA_HOME/rc67/script_data/songs.txt"
 	fi
@@ -364,10 +366,17 @@ alias stonehenge='cat ~/.local/share/rc67/data/stonehenge.txt'
 
 # Only use this if the history in the current terminal is suddenly way shorter than it should be
 function restorebashhistory () {
-	history | sed 's/^[0-9]*[ ]*//g' > /tmp/new_history
+	history | sed 's/^[ ]*[0-9]*[ ]*//g' > /tmp/new_history
 	cat "$HOME/Downloads/.bash_history_backup" /tmp/new_history > /tmp/all_history
 	mv /tmp/all_history "$HOME/.bash_history"
 }
+
+function do_pkill () {
+	pkill "$@"
+	[ "$?" == "0" ] || echo "Program not found"
+}
+
+alias pkill='do_pkill'
 
 source "$HOME/.local/share/rc67/data/autocompletion.bash"
 
