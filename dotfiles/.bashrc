@@ -392,6 +392,30 @@ export PASSWORD_STORE_CLIP_TIME=120
 export _FASD_NOCASE=1
 eval "$(fasd --init auto)"
 
+function do_z () {
+	command="fasd_cd -d"
+	if [[ "$1" == "--choice" ]]; then
+		command="fasd_cd -d -i"
+		command="zz"
+		shift
+	fi
+
+	if [[ "$1" == ".." ]]; then
+		last_dir="$(cat /tmp/fasd_last_dir)"
+		pwd > /tmp/fasd_last_dir
+		cd "$last_dir"
+		return
+	fi
+	pwd > /tmp/fasd_last_dir
+	$command "$1"
+}
+
+unalias z
+unalias zz
+
+alias z='do_z'
+alias zz='do_z --choice'
+
 unalias a
 unalias s
 unalias sd
