@@ -1,0 +1,4 @@
+min_scale = 1
+scroll_speed = 5
+drag_friction = 100
+scale_friction = 50

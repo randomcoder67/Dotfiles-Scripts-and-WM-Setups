@@ -14,5 +14,5 @@ elif [[ "$1" == "--play" ]]; then
 	[[ "$user_choice" == "0" ]] && exit
 	
 	url=$(cat "$SAVE_FILE_LOC" | jq -r '.[1]' | sed -n "${user_choice}p")
-	mpv --ytdl-format="best" --x11-name="otherfloating" --force-window=immediate --input-ipc-server="$socketName" "$url"
+	mpv --ytdl-format="best" --x11-name="mainfloating" --force-window=immediate --input-ipc-server="$socketName" "$url"
 fi

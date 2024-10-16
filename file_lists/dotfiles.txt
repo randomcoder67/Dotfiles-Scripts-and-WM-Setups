@@ -51,3 +51,6 @@
 ~/.config/conky/clock_settings_xfce
 ~/.config/conky/conky_clock.lua
 ~/.config/X11/xresources
+~/.config/nimble/nimble.ini
+~/.config/nim/nim.cfg
+~/.config/boomer/config

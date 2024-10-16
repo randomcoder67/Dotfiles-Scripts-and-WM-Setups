@@ -13,7 +13,7 @@ local fmtCommands = {}
 --fmtCommands["racket"] = "raco fmt --width 80 --max-blank-lines 2 -i"
 --fmtCommands["javascript"] = "prettier --write --loglevel silent"
 --fmtCommands["rust"] = "rustfmt"
-fmtCommands["nim"] = "/home/USER_USERNAME/Programs/newPrograms/other/nimtabstospaces -s"
+--fmtCommands["nim"] = "/home/USER_USERNAME/Programs/newPrograms/other/nimtabstospaces -s"
 fmtCommands["markdown"] = "tablealigner -s"
 
 config.RegisterCommonOption("autofmt", "fmt-onsave", true)

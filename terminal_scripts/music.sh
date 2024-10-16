@@ -124,10 +124,15 @@ elif [[ "$doArg" == "--choice" ]]; then
 	elif ! [ -d "$HOME/Music/$(echo $result | sed 's/ //g')" ]; then
 		exit
 	elif ! [[ $(find "$HOME/Music/$(echo $result | sed 's/ //g')" -type d | wc -l) == "1" ]]; then
-		playlists="$(find $HOME/Music/$(echo $result | sed 's/ //g') -maxdepth 1 -mindepth 1 -type d | sort | sed 's/\([A-Z][a-z]\)/ \1/g' | sed 's/\([a-z]\)\([0-9]\)/\1 \2/g' | cut -d '/' -f 6 | sed 's/^ //g')"
+		playlists="All Subcategories"$'\n'"$(find $HOME/Music/$(echo $result | sed 's/ //g') -maxdepth 1 -mindepth 1 -type d | sort | sed 's/\([A-Z][a-z]\)/ \1/g' | sed 's/\([a-z]\)\([0-9]\)/\1 \2/g' | cut -d '/' -f 6 | sed 's/^ //g')"
 		result_new=$(echo -e "$playlists" | rofi -dmenu -i -p "Select Subcategory of Music To Play" -kb-custom-1 "Shift+Return")
 		[[ "$result_new" == "" ]] && exit
-		folder="$HOME/Music/$(echo $result | sed 's/ //g')/$(echo $result_new | sed 's/ //g')"
+		if [[ "$result_new" == "All Subcategories" ]]; then
+			folder="$HOME/Music/$(echo $result | sed 's/ //g')"
+			notify-send wanker
+		else
+			folder="$HOME/Music/$(echo $result | sed 's/ //g')/$(echo $result_new | sed 's/ //g')"
+		fi
 	else
 		folder="$HOME/Music/$(echo $result | sed 's/ //g')"
 	fi
