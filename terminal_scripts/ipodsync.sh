@@ -22,11 +22,14 @@ read -p "y/N: " confirmationVar
 echo "Mounting iPod to ${ipodMount}"
 sudo mount -o rw,users,umask=000 "/dev/sd${driveLetter}" "${ipodMount}/"
 
-echo "Deleting old music"
-rm "${ipodMount}/iPod_Control/Music/MainMusic/"*.m4a
+#echo "Deleting old music"
+#rm "${ipodMount}/iPod_Control/Music/MainMusic/"*.m4a
 
-echo "Copying new music"
-cp ~/Music/CurrentPlaylist/* "${ipodMount}/iPod_Control/Music/MainMusic/"
+#echo "Copying new music"
+#cp ~/Music/CurrentPlaylist/* "${ipodMount}/iPod_Control/Music/MainMusic/"
+
+echo "Syncing Main Music"
+rsync -vr --update --delete --modify-window=1 --info=progress2 ~/Music/CurrentPlaylist/ "${ipodMount}/iPod_Control/Music/MainMusic/"
 
 # NEED TO REMOVE NON ENGLISH CHARACTERS (korean etc)
 
