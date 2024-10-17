@@ -61,7 +61,7 @@ if ps -ax | grep "/usr/bin/mpv --really-quiet --title=\${metadata/title} - \${me
 	paused=$(echo '{ "command": ["get_property", "pause"] }' | socat - "$socketName" | jq .data -r)
 	if [[ "$paused" == "true" ]]; then
 		notify-send -t 9000 -i emblem-music-symbolic "Music already active, unpausing"
-
+		sleep 0.4
 		echo "cycle pause" | socat - "$socketName"
 	else
 		toPrint="No Music Playing"
