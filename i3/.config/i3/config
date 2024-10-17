@@ -239,6 +239,7 @@ bindsym $mod+numbersign exec --no-startup-id "~/.local/share/rc67/hotkey_scripts
 #### new music save
 #### Super + P
 bindsym $mod+d exec --no-startup-id "~/.config/i3/toggle_desktop.sh"
+bindsym $mod+Shift+a exec --no-startup-id "~/.config/i3/airplane_mode.sh"
 
 # Autostarts
 exec --no-startup-id altgrtosuper
@@ -251,6 +252,7 @@ exec --no-startup-id "~/.config/i3/cpu_background_script.sh"
 exec --no-startup-id "xset dpms 0 0 0"
 exec --no-startup-id "xset s off"
 exec --no-startup-id "~/.config/i3/scratchpad.sh -s"
+exec --no-startup-id "xrdb -load ~/.config/X11/xresources"
 
 default_border pixel 5
 default_floating_border pixel 2
