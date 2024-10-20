@@ -16,6 +16,8 @@ if [[ "$1" == "--setup" ]]; then
 	cp panel_scripts/*.py "$data_home/rc67/panel_scripts/"
 	gcc -Wall -Wextra panel_scripts/cpu.c -o panel_scripts/cpu
 	mv panel_scripts/cpu "$data_home/rc67/panel_scripts/"
+	gcc -Wall -Wextra panel_scripts/uptime.c -o panel_scripts/uptime
+	mv panel_scripts/uptime "$data_home/rc67/panel_scripts/"
 	cp rofi_utils/utility_scripts/*.sh "$data_home/rc67/rofi_utility_scripts/"
 	go build -o rofi_utils/utility_scripts/geohash rofi_utils/utility_scripts/geohash.go
 	mv rofi_utils/utility_scripts/geohash "$HOME/.local/bin"

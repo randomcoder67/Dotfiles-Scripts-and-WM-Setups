@@ -8,8 +8,12 @@ fi
 idevicepair validate
 idevicepair pair
 
+[[ "$?" == "0" ]] || exit
+
 ifuse --documents com.foobar2000.mobile "$HOME/Downloads/USBDrive"
 
 rsync -vr --update --delete --modify-window=1 --info=progress2 ~/Music/CurrentPlaylist/ "$HOME/Downloads/USBDrive/"
+
+fusermount -u "$HOME/Downloads/USBDrive"
 
 idevicepair unpair

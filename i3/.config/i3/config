@@ -253,6 +253,7 @@ exec --no-startup-id "xset dpms 0 0 0"
 exec --no-startup-id "xset s off"
 exec --no-startup-id "~/.config/i3/scratchpad.sh -s"
 exec --no-startup-id "xrdb -load ~/.config/X11/xresources"
+exec --no-startup-id "alttab -fg "#d58681" -bg "#4a4a4a" -frame "#eb564d" -t 128x150 -i 127x64"
 
 default_border pixel 5
 default_floating_border pixel 2

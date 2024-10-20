@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 action=$(echo -en "Lock\nLog Out\nQuick Sleep\nHybrid Sleep\nHibernate\nShutdown\nReboot\nArch Terminal\n" | rofi -dmenu -i -p "Select Action")
+[[ "$?" == "0" ]] || exit
 
 confirm=$(echo -en "No\nYes\n" | rofi -dmenu -i -p "Confirm Action: ${action}")
 

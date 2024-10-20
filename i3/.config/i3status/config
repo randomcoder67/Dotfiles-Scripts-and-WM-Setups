@@ -26,6 +26,7 @@ order += "battery all"
 #order += "disk /"
 #order += "load"
 order += "read_file cpu_usage"
+order += "read_file uptime"
 order += "cpu_temperature 1"
 order += "memory"
 order += "tztime date"
@@ -52,6 +53,10 @@ read_file stream4 {
 
 read_file cpu_usage {
         path = "/tmp/panel_i3_data/panel_cpu.txt"
+}
+
+read_file uptime {
+        path = "/tmp/panel_i3_data/panel_uptime.txt"
 }
 
 wireless _first_ {
