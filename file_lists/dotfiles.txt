@@ -13,6 +13,7 @@
 ~/.config/glow/glow.yml
 ~/.config/glow/theme.json
 ~/.config/gtk-3.0/gtk.css
+~/.config/gtk2rc
 ~/.config/htop/htoprc
 ~/.config/Mousepad/accels.scm
 ~/.config/Mousepad/mousepadrc
