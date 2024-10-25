@@ -52,7 +52,7 @@ elif [[ "$1" == "--install" ]]; then
 	elif [[ "$2" == "xfce" ]]; then
 		sudo pacman -S xfce4-genmon-plugin xfce4-screenshooter xfce4-pulseaudio-plugin xfce4-screensaver xfce4-screenshooter ristretto thunar-archive-plugin network-manager-applet
 	elif [[ "$2" == "i3" ]]; then
-		sudo pacman -S dunst i3 feh
+		sudo pacman -S dunst i3 feh unclutter
 	fi
 elif [[ "$1" == "--git-repos" ]]; then
 	# rust org utils

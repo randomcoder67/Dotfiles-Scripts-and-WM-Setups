@@ -8,6 +8,7 @@
 ~/.config/i3/i3_panel_stream_checker.sh
 ~/.config/i3/stream_checkers_background_script.sh
 ~/.config/i3/cpu_background_script.sh
+~/.config/i3/battery_low_warning.sh
 ~/.config/i3/firefox_new_tab.sh
 ~/.config/i3/scratchpad.sh
 ~/.config/i3/i3_systemmenu.sh
