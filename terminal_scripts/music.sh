@@ -118,7 +118,9 @@ elif [[ "$doArg" == "--choice" ]]; then
 			folder="$HOME/Music/Favourites/$(echo $result | sed 's/ //g')"
 		fi
 	elif [[ "$result" == "All Music" ]]; then
-		folder="$HOME/Music"
+		find "$HOME/Music" -maxdepth 1 -type f > /tmp/all_music.m3u8
+		/usr/bin/mpv --really-quiet --title='${metadata/title}'\ -\ '${metadata/artist}' --no-resume-playback --loop-playlist --playlist="/tmp/all_music.m3u8" "$shuffleArgs" "$backgroundArg1" "$backgroundArg2" --input-ipc-server="$socketName" --x11-name="$className" & disown
+		exit
 	elif [[ "$result" == "New Music" ]]; then
 		folder="$HOME/Videos/YouTube/NewMusic"
 	elif ! [ -d "$HOME/Music/$(echo $result | sed 's/ //g')" ]; then
