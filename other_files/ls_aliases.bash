@@ -1,4 +1,4 @@
-# Alias for the ls and find commands
+# Alias for the ls, find and du commands
 
 ## File Displaying
 
@@ -26,8 +26,8 @@ alias lsda='/usr/bin/ls --group-directories-first -N -h --color=auto -d */ .*/ 2
 
 alias lc='ls | wc -l'
 alias lca='ls -A | wc -l'
-alias ldc='ls -d */ | wc -l'
-alias ldca='ls -d */ .*/ | wc -l'
+alias lcd='ls -d */ | wc -l'
+alias lcda='ls -d */ .*/ | wc -l'
 
 ### Recursive
 
@@ -40,5 +40,5 @@ alias lcdra="find . -type d | wc -l"
 
 alias ldu='du -Sh --exclude "./.*" | tail -n 1'
 alias ldua='du -Sh | tail -n 1'
-alias ldur='du -h --exlcude "./.*" | tail -n 1'
+alias ldur='du -h --exclude "./.*" | tail -n 1'
 alias ldura='du -h | tail -n 1'
