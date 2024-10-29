@@ -82,14 +82,6 @@ lt () {
 alias grep='grep -i --color=auto'
 alias greps='/usr/bin/grep --color=auto'
 alias grepa='grep -i -I -A 5 -B 5 --color=auto'
-alias l='ls --group-directories-first --file-type -N -1 -h --color=auto'
-alias ls='ls --group-directories-first --file-type -N -h --color=auto'
-alias la='ls --group-directories-first --file-type -NA -1 -h --color=auto'
-alias lsa='ls --group-directories-first --file-type -NA -h --color=auto'
-alias ld='/usr/bin/ls --group-directories-first -N -1 -h --color=auto -d */ 2> /dev/null'
-alias lda='/usr/bin/ls --group-directories-first -N -1 -h --color=auto -d */ .*/ 2> /dev/null'
-alias lsd='/usr/bin/ls --group-directories-first -N -h --color=auto -d */ 2> /dev/null'
-alias lsda='/usr/bin/ls --group-directories-first -N -h --color=auto -d */ .*/ 2> /dev/null'
 alias diff='diff --color'
 alias hs='history'
 alias ra='ranger'
@@ -256,10 +248,6 @@ function t () {
 	TZ="Australia/Sydney" date +"  Sydney:         %H:%M:%S - %a, %b %d (%Z)"
 }
 
-alias lc='ls | wc -l'
-alias lca='ls -A | wc -l'
-
-
 # Various Search Commands
 
 alias his='history | grep'
@@ -379,6 +367,7 @@ function do_pkill () {
 alias pkill='do_pkill'
 
 source "$HOME/.local/share/rc67/data/autocompletion.bash"
+source "$HOME/.local/share/rc67/data/ls_aliases.bash"
 
 HISTSIZE=50000
 HISTFILESIZE=50000

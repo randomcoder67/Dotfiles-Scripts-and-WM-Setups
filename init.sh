@@ -25,6 +25,7 @@ if [[ "$1" == "--setup" ]]; then
 
 	cd terminal_scripts; make full; cd ..
 	cd rofi_utils/launcher; make full; cd ../..
+	cp other_files/ls_aliases.bash "$data_home/rc67/data/"
 	cp -r other_files/allEmojis.txt "$data_home/rc67/data/"
 	cp -r other_files/autocompletion.bash "$data_home/rc67/data/"
 	cp -r other_files/stonehenge.txt "$data_home/rc67/data/"
