@@ -45,7 +45,7 @@ elif [ $status -eq 12 ]; then
 	xdotool keyup Shift
 	# Get bookmark, remove alias and check if url
 	toOpen=$(sed "${index}q;d" "$XDG_DATA_HOME/rc67/script_data/bookmarks.txt" | awk -F 'DELIM' '{print $2}' | tr -d '\n')
-	if echo "$toOpen" | grep -q -E 'https?://(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&\/\/=]*)'; then # If so, open it
+	if echo "$toOpen" | grep -q -E 'https?://(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,8}\b([-a-zA-Z0-9()@:%_\+.~#?&\/\/=]*)'; then # If so, open it
 		openFirefox "$toOpen"
 	else
 		notify-send "Not a URL"

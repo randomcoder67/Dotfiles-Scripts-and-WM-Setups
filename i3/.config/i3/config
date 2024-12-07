@@ -118,18 +118,21 @@ set $ws2 "2:DEV"
 set $ws3 "3:GFX"
 set $ws4 "4:OTH"
 set $ws5 "5:DSK"
+set $ws6 "6:EXT"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
+bindsym $mod+0 workspace number $ws6
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+0 move container to workspace number $ws6
 
 # reload the configuration file
 #bindsym $mod+Shift+c reload
@@ -199,7 +202,9 @@ bindsym $mod+minus exec --no-startup-id "music --prev
 bindsym $mod+plus exec --no-startup-id "music --next
 bindsym $mod+Shift+plus exec --no-startup-id "music --favourite --add"
 bindsym $mod+Shift+bracketright exec --no-startup-id "music --favourite --remove"
-
+#### Remote Music
+bindsym $mod+Shift+p exec --no-startup-id "~/Programs/localStuff/auto_music_control.sh -r"
+#### Songrec
 bindsym $mod+r exec --no-startup-id "~/.local/share/rc67/hotkey_scripts/songrec.sh"
 
 # Program Openers
@@ -248,7 +253,8 @@ exec --no-startup-id altgrtosuper
 exec --no-startup-id "conky -c ~/.config/conky/conky_i3.conf"
 exec --no-startup-id "picom --backend xrender"
 exec --no-startup-id "xinput set-prop 10 310 1"
-exec --no-startup-id "feh --no-fehbg --bg-fill ~/Pictures/nasa/andromedaSpitzerSpaceTelescope.jpg"
+exec --no-startup-id "xinput set-prop 10 179 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.5"
+exec --no-startup-id "feh --no-fehbg --bg-fill ~/Pictures/nasa/ic4709Hubble.webp"
 exec --no-startup-id "~/.config/i3/stream_checkers_background_script.sh"
 exec --no-startup-id "~/.config/i3/cpu_background_script.sh"
 exec --no-startup-id "~/.config/i3/battery_low_warning.sh"
@@ -270,6 +276,7 @@ client.urgent           #0000FF #900000 #ffffff #900000   #0000FF
 client.placeholder      #F0F0F0 #0c0c0c #ffffff #000000   #F0F0F0
 
 bindsym Mod1+minus move scratchpad
+bindsym $mod+Tab workspace back_and_forth
 bindsym Mod1+w exec --no-startup-id "rofi -show window"
 bindsym $mod+Shift+c exec --no-startup-id "dunstctl close-all"
 

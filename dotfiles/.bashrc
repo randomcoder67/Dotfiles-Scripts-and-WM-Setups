@@ -369,8 +369,8 @@ alias pkill='do_pkill'
 source "$HOME/.local/share/rc67/data/autocompletion.bash"
 source "$HOME/.local/share/rc67/data/ls_aliases.bash"
 
-HISTSIZE=50000
-HISTFILESIZE=50000
+HISTSIZE=60000
+HISTFILESIZE=60000
 
 export HISTCONTROL=ignoreboth:erasedups
 export MICRO_TRUECOLOR=1

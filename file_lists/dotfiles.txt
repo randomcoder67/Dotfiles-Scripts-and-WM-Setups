@@ -55,3 +55,6 @@
 ~/.config/nimble/nimble.ini
 ~/.config/nim/nim.cfg
 ~/.config/boomer/config
+~/.config/geany/geany.conf
+~/.config/geany/keybindings.conf
+~/.config/geany/colorschemes/jmbi.conf

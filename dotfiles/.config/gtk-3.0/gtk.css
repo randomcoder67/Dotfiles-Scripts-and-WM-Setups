@@ -1,3 +1,5 @@
 #xfwm-tabwin {
--XfwmTabwinWidget-icon-size: 128px;
--XfwmTabwinWidget-preview-size: 256px; }
+	-XfwmTabwinWidget-icon-size: 128px;
+	-XfwmTabwinWidget-preview-size: 256px;
+}
+

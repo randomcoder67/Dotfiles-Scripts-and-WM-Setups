@@ -6,6 +6,7 @@ idFile="$HOME/.cache/rc67/volumeNotifiationId"
 
 if [ -f "$idFile" ]; then
 	oldNotificationId=$(cat "$idFile")
+	[[ "$oldNotificationId" == "" ]] && oldNotificationId="1001"
 else
 	oldNotificationId="1001"
 fi
