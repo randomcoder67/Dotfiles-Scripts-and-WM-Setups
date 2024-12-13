@@ -298,6 +298,10 @@ do_yt-dlp () {
 				format_args=(-f 140)
 				shift
 				;;
+			--playlist-order)
+				output_format_args=(-o "%(playlist_index)s-%(title)s.%(ext)s")
+				shift
+				;;
 			--standard)
 				format_args=(-f "22/bestvideo[height<=720]+bestaudio")
 				shift
