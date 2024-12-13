@@ -131,7 +131,6 @@ elif [[ "$doArg" == "--choice" ]]; then
 		[[ "$result_new" == "" ]] && exit
 		if [[ "$result_new" == "All Subcategories" ]]; then
 			folder="$HOME/Music/$(echo $result | sed 's/ //g')"
-			notify-send wanker
 		else
 			folder="$HOME/Music/$(echo $result | sed 's/ //g')/$(echo $result_new | sed 's/ //g')"
 		fi
