@@ -6,8 +6,24 @@
 
 [ -f "$XDG_CACHE_HOME/rc67/bookmarksIcons.sh" ] || "$XDG_DATA_HOME/rc67/hotkey_scripts/addIconsBookmarks.sh"
 
-index=$("$XDG_CACHE_HOME/rc67/bookmarksIcons.sh" | rofi -kb-custom-1 "Ctrl+a" -kb-custom-2 "Ctrl+w" -kb-custom-3 "Shift+Return" -dmenu -show-icons -i -format "d" -p "Bookmarks")
-status=$?
+if [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
+	index=$("$XDG_CACHE_HOME/rc67/bookmarksIcons.sh" | rofi -dmenu -show-icons -i -format "d" -p "Bookmarks")
+	status=$?
+elif [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+	selection=$(cat "$XDG_DATA_HOME/rc67/script_data/bookmarks.txt" | sed 's/DELIM.*//g' | cat -n | sed 's/\t/ /g' | fzf --with-nth=2.. -i --expect="ctrl-w,ctrl-a")
+	key=$(echo "$selection" | head -n 1)
+	data=$(echo "$selection" | tail -n 1)
+	if [[ "$key" == "ctrl-w" ]]; then
+		index=$(echo "$data" | awk '{print $1}')
+		status=11
+	elif [[ "$key" == "ctrl-a" ]]; then
+		index=$(echo "$data" | awk '{print $1}')
+		status=10
+	else
+		index=$(echo "$data" | awk '{print $1}')
+		status=0
+	fi
+fi
 
 openFirefox() {
 	url="$1"
@@ -23,10 +39,17 @@ openFirefox() {
 # status=10 means the user selected to add a bookmark
 if [ $status -eq 10 ]; then
 	# Get new bookmark to add
-	itemToAdd=$(rofi -dmenu -p "Enter New Bookmark")
-	[[ "$itemToAdd" == "" ]] && exit
-	# Get alias for bookmark (will be blank if no alias is needed)
-	itemAlias=$(rofi -dmenu -p "Enter Alias (Leave blank for no alias)")
+	if [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
+		itemToAdd=$(rofi -dmenu -p "Enter New Bookmark")
+		[[ "$itemToAdd" == "" ]] && exit
+		# Get alias for bookmark (will be blank if no alias is needed)
+		itemAlias=$(rofi -dmenu -p "Enter Alias (Leave blank for no alias)")
+	elif [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+		read -p "Enter New Bookmark: " itemToAdd
+		[[ "$itemToAdd" == "" ]] && exit
+		# Get alias for bookmark (will be blank if no alias is needed)
+		read -p "Enter Alias (Leave blank for no alias): " itemAlias
+	fi
 	# Add bookmark with alias to file (if no alias specified, the bookmark and alias are the same
 	if [[ "$itemAlias" == "" ]]; then
 		echo "$itemToAdd""DELIM""$itemToAdd" >> "$XDG_DATA_HOME/rc67/script_data/bookmarks.txt"

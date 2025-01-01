@@ -15,6 +15,7 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 #export PYTHON_HISTORY="$XDG_STATE_HOME/python/history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk2rc"
+export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
 
 #export _JAVA_OPTIONS=-"Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
 
@@ -23,3 +24,4 @@ export VISUAL="micro"
 export BROWSER="firefox"
 export PATH=$PATH:~/.local/bin:~/.npm/bin:~/.local/share/npm/bin
 export TERMINAL="alacritty"
+#export GTK_THEME=Adwaita

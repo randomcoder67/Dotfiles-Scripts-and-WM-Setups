@@ -1,4 +1,4 @@
-# Open images in sxiv (normal)
+# Open images in sxiv
 rs () {
 	toOpen=$@
 	if [[ "$toOpen" == "" ]]; then

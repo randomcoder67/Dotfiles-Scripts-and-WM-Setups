@@ -58,3 +58,5 @@
 ~/.config/geany/geany.conf
 ~/.config/geany/keybindings.conf
 ~/.config/geany/colorschemes/jmbi.conf
+~/.config/kitty/kitty.conf
+~/.config/kitty/adwaita-dark.conf
