@@ -28,28 +28,9 @@ PS1='\[\033[1;36m\]\u\[\033[1;31m\]@\[\033[1;32m\]\h:\[\033[1;35m\]\w\[\033[1;31
 
 # External Program Openers
 
-# Open pdf files in Zathura
-pdf () {
-	for arg; do
-		zathura "$arg" & disown
-	done
-}
+#### SUBSTITUTE - PDF VIEWER
 
-# Open files with Mousepad
-ms () {
-	for arg; do
-		mousepad "$arg" & disown
-	done
-}
-
-# Open files with Mousepad in a new window
-msn () {
-	mousepad -o window & disown
-	sleep 0.2
-	for arg; do
-		mousepad "$arg" & disown
-	done
-}
+#### SUBSTITUTE - MINIMAL GUI TEXT EDITOR
 
 # Open video(s) with mpv
 mp () {
@@ -312,6 +293,14 @@ do_yt-dlp () {
 				;;
 			--archive)
 				archive_args=("--download-archive" "archive.txt")
+				shift
+				;;
+			--1080p)
+				format_args=("-f" "bestvideo[height<=1080][protocol=https][vcodec*=avc]+bestaudio[ext=m4a]")
+				shift
+				;;
+			--720p)
+				format_args=("-f" "bestvideo[height<=720][protocol=https][vcodec*=avc]+bestaudio[ext=m4a]")
 				shift
 				;;
 			*)
