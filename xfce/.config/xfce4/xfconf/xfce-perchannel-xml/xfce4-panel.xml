@@ -155,7 +155,7 @@
       <property name="font" type="string" value="Roboto Mono 15"/>
     </property>
     <property name="plugin-20" type="string" value="genmon">
-      <property name="command" type="string" value="/home/USER_USERNAME/.local/share/rc67/panel_scripts/xfcePanelStreamChecker.sh -p 1"/>
+      <property name="command" type="string" value="/home/USER_USERNAME/.local/share/rc67/panel_scripts/panel_stream_checker.sh -p 1 xfce"/>
       <property name="use-label" type="bool" value="false"/>
       <property name="text" type="string" value="(genmon)"/>
       <property name="update-period" type="int" value="300000"/>
@@ -163,7 +163,7 @@
       <property name="font" type="string" value="Roboto 12"/>
     </property>
     <property name="plugin-21" type="string" value="genmon">
-      <property name="command" type="string" value="//home/USER_USERNAME/.local/share/rc67/panel_scripts/xfcePanelStreamChecker.sh -c 1"/>
+      <property name="command" type="string" value="//home/USER_USERNAME/.local/share/rc67/panel_scripts/panel_stream_checker.sh -c 1 xfce"/>
       <property name="use-label" type="bool" value="false"/>
       <property name="text" type="string" value="(genmon)"/>
       <property name="update-period" type="int" value="300000"/>
@@ -171,7 +171,7 @@
       <property name="font" type="string" value="Roboto 16"/>
     </property>
     <property name="plugin-22" type="string" value="genmon">
-      <property name="command" type="string" value="/home/USER_USERNAME/.local/share/rc67/panel_scripts/xfcePanelStreamChecker.sh -p 2"/>
+      <property name="command" type="string" value="/home/USER_USERNAME/.local/share/rc67/panel_scripts/panel_stream_checker.sh -p 2 xfce"/>
       <property name="use-label" type="bool" value="false"/>
       <property name="text" type="string" value="(genmon)"/>
       <property name="update-period" type="int" value="300000"/>
@@ -179,7 +179,7 @@
       <property name="font" type="string" value="Roboto 12"/>
     </property>
     <property name="plugin-23" type="string" value="genmon">
-      <property name="command" type="string" value="/home/USER_USERNAME/.local/share/rc67/panel_scripts/xfcePanelStreamChecker.sh -c 2"/>
+      <property name="command" type="string" value="/home/USER_USERNAME/.local/share/rc67/panel_scripts/panel_stream_checker.sh -c 2 xfce"/>
       <property name="use-label" type="bool" value="false"/>
       <property name="text" type="string" value="(genmon)"/>
       <property name="update-period" type="int" value="300000"/>
@@ -187,7 +187,7 @@
       <property name="font" type="string" value="Roboto 16"/>
     </property>
     <property name="plugin-24" type="string" value="genmon">
-      <property name="command" type="string" value="/home/USER_USERNAME/.local/share/rc67/panel_scripts/xfcePanelStreamChecker.sh -p 3"/>
+      <property name="command" type="string" value="/home/USER_USERNAME/.local/share/rc67/panel_scripts/panel_stream_checker.sh -p 3 xfce"/>
       <property name="use-label" type="bool" value="false"/>
       <property name="text" type="string" value="(genmon)"/>
       <property name="update-period" type="int" value="300000"/>
@@ -195,7 +195,7 @@
       <property name="font" type="string" value="Roboto 12"/>
     </property>
     <property name="plugin-25" type="string" value="genmon">
-      <property name="command" type="string" value="//home/USER_USERNAME/.local/share/rc67/panel_scripts/xfcePanelStreamChecker.sh -c 3"/>
+      <property name="command" type="string" value="//home/USER_USERNAME/.local/share/rc67/panel_scripts/panel_stream_checker.sh -c 3 xfce"/>
       <property name="use-label" type="bool" value="false"/>
       <property name="text" type="string" value="(genmon)"/>
       <property name="update-period" type="int" value="300000"/>
@@ -245,7 +245,7 @@
       </property>
     </property>
     <property name="plugin-26" type="string" value="genmon">
-      <property name="command" type="string" value="/home/USER_USERNAME/.local/share/rc67/panel_scripts/xfcePanelStreamChecker.sh -p 4"/>
+      <property name="command" type="string" value="/home/USER_USERNAME/.local/share/rc67/panel_scripts/panel_stream_checker.sh -p 4 xfce"/>
       <property name="use-label" type="bool" value="false"/>
       <property name="text" type="string" value="(genmon)"/>
       <property name="update-period" type="int" value="300000"/>
@@ -253,7 +253,7 @@
       <property name="font" type="string" value="Roboto 12"/>
     </property>
     <property name="plugin-27" type="string" value="genmon">
-      <property name="command" type="string" value="//home/USER_USERNAME/.local/share/rc67/panel_scripts/xfcePanelStreamChecker.sh -c 4"/>
+      <property name="command" type="string" value="/home/USER_USERNAME/.local/share/rc67/panel_scripts/panel_stream_checker.sh -c 4 xfce"/>
       <property name="use-label" type="bool" value="false"/>
       <property name="text" type="string" value="(genmon)"/>
       <property name="update-period" type="int" value="300000"/>

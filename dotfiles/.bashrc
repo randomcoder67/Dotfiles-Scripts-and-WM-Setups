@@ -345,7 +345,7 @@ alias cur='cd ~/Music/CurrentPlaylist/'
 alias dot='cd ~/Programs/dotfiles/'
 alias bac='cd ~/Downloads/BackupMount/'
 alias web='cd ~/Programs/website/GitHubWebsite/'
-alias inst='cd "$HOME/.local/share/multimc/instances/Vanilla Plus 1.21.1/.minecraft"'
+alias inst='cd "$HOME/.local/share/multimc/instances/Vanilla 1.21.1/.minecraft"'
 
 # Other
 

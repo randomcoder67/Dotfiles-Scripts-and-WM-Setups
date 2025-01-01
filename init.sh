@@ -14,6 +14,8 @@ if [[ "$1" == "--setup" ]]; then
 
 	cp hotkey_scripts/* "$data_home/rc67/hotkey_scripts/"
 	cp panel_scripts/*.py "$data_home/rc67/panel_scripts/"
+	gcc -Wall -Wextra panel_scripts/network_down.c -o panel_scripts/network_down
+	mv panel_scripts/network_down "$data_home/rc67/panel_scripts/"
 	gcc -Wall -Wextra panel_scripts/cpu.c -o panel_scripts/cpu
 	mv panel_scripts/cpu "$data_home/rc67/panel_scripts/"
 	gcc -Wall -Wextra panel_scripts/uptime.c -o panel_scripts/uptime

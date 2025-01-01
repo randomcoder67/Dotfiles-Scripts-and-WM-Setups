@@ -25,6 +25,7 @@ order += "volume master"
 order += "battery all"
 #order += "disk /"
 #order += "load"
+order += "read_file network_down"
 order += "read_file cpu_usage"
 order += "read_file uptime"
 order += "cpu_temperature 1"
@@ -49,6 +50,10 @@ read_file stream3 {
 
 read_file stream4 {
 	path = "/tmp/panel_i3_data/panel_stream_4.txt"
+}
+
+read_file network_down {
+        path = "/tmp/panel_i3_data/panel_network_down.txt"
 }
 
 read_file cpu_usage {
