@@ -317,6 +317,7 @@ do_yt-dlp () {
 
 ## Alias to allow escaping with backslash
 alias yt-dlp='do_yt-dlp'
+alias yt-playlist='do_yt-dlp --all-metadata --720p --aria --archive'
 
 # Quick cd
 
@@ -336,6 +337,24 @@ alias bac='cd ~/Downloads/BackupMount/'
 alias web='cd ~/Programs/website/GitHubWebsite/'
 alias inst='cd "$HOME/.local/share/multimc/instances/Vanilla 1.21.1/.minecraft"'
 
+# Quick config file editing
+
+function edit_config_file () {
+	config_file_location="$1"
+	"${VISUAL:-${EDITOR}}" "$config_file_location"
+}
+
+alias confbashrc='edit_config_file ~/.bashrc'
+alias confi3='edit_config_file ~/.config/i3/config'
+alias confi3status='edit_config_file ~/.config/i3status/config'
+alias confmpv='edit_config_file ~/.config/mpv/mpv.conf'
+alias confmpvinput='edit_config_file ~/.config/mpv/input.conf'
+alias confkitty='edit_config_file ~/.config/kitty/kitty.conf'
+alias confalacritty='edit_config_file ~/.config/alacritty/alacritty.toml'
+alias confconkyscript='edit_config_file ~/.config/rc67/conky_script.sh'
+alias confroficonfig='edit_config_file ~/.config/rc67/rofi_launcher_config.toml'
+alias confrofiprograms='edit_config_file ~/.config/rc67/rofi_launcher_programs.toml'
+
 # Other
 
 alias files='wc -l ~/.cache/rc67/files.txt'
@@ -344,6 +363,7 @@ alias clearlogs='sudo journalctl --vacuum-time=2d'
 alias curloc='cat ~/.config/rc67/cur_location.csv | sed "s/|/\n/g"'
 alias todo='micro ~/Documents/todo.md'
 alias stonehenge='cat ~/.local/share/rc67/data/stonehenge.txt'
+alias durationr='media-file-duration . -r'
 
 # Only use this if the history in the current terminal is suddenly way shorter than it should be
 function restorebashhistory () {
