@@ -191,6 +191,11 @@ function archiveplaylist() {
 	yt-dlp --cookies-from-browser firefox -J --flat-playlist "$1" | jq '.entries[] | [.title,.channel,.url]| @csv'
 }
 
+function archiveplaylisttoml {
+	playlist_url="$1"
+	yt-dlp --cookies-from-browser firefox --flat-playlist --skip-download -J "$playlist_url" | jq '{title, videos: [.entries[] | {title, channel, id}]}' | yq -t
+}
+
 function sortfile () {
 	[[ "${#@}" != "1" ]] && echo "Usage: sortfile filename" && return
 	[ -f "${1}_sorted_temporary_file" ] && echo "Error, file with temp name already exists" && return
