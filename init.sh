@@ -44,7 +44,7 @@ elif [[ "$1" == "--install" ]]; then
 			mousepad firefox imagemagick mpv \
 			songrec gimp alacritty cool-retro-term zathura zathura-pdf-mupdf zathura-ps pinta \
 			bc btop htop ncdu intel-gpu-tools pulsemixer nethogs vi micro tmux newsboat libqalculate \
-			unzip man man-pages bat duf ffmpeg mediainfo yt-dlp hyperfine glow jq neofetch tokei dust zip pass rsync perl-rename moreutils zbar speedtest-cli aria2 \
+			unzip man man-pages bat duf ffmpeg mediainfo yt-dlp hyperfine glow jq yq neofetch tokei dust zip pass rsync perl-rename moreutils zbar speedtest-cli aria2 \
 			python-pillow python-mutagen python-requests python-pandas python-pipx python-cairo python-beautifulsoup4 python-lxml \
 			go make meson ninja gcc base-devel sassc strace valgrind \
 			libxtst libvoikko aspell-en hspell nuspell hunspell libnotify \
