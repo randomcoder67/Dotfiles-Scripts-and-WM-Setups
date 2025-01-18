@@ -76,5 +76,9 @@ elif [ $status -eq 12 ]; then
 # Otherwise the program returns with default status, meaning the user has selected to copy a bookmark
 else
 	# Get bookmark, remove alias and copy to clipboard
-	sed "${index}q;d" "$XDG_DATA_HOME/rc67/script_data/bookmarks.txt" | awk -F 'DELIM' '{print $2}' | tr -d '\n' | xclip -selection c
+	if [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
+		sed "${index}q;d" "$XDG_DATA_HOME/rc67/script_data/bookmarks.txt" | awk -F 'DELIM' '{print $2}' | tr -d '\n' | xclip -selection c
+	elif [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
+		sed "${index}q;d" "$XDG_DATA_HOME/rc67/script_data/bookmarks.txt" | awk -F 'DELIM' '{print $2}' | tr -d '\n' | wl-copy
+	fi
 fi

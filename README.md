@@ -6,6 +6,8 @@
 | :-: | :-: | :-: |	
 | [Xfce 4](info/xfce4.md) | `xfce/` | Lightweight Floating Window Manager and Desktop Environment |
 | [i3](info/i3.md) | `i3/` | Manual Tiling Window Manager |
+| [GNOME](info/gnome.md) | `gnome/` | Floating Window Manager and Desktop Environment |
+| [Awesome](info/awesome.md) | `awesome/` | Automatic Tiling Window Manager |
 
 ## General Dotfiles
 

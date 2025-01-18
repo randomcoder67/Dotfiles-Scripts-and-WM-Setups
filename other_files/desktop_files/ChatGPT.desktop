@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=ChatGPT
+Exec=firefox https://chatgpt.com
+Icon=hipchat
+StartupNotify=false
+Terminal=false

@@ -20,7 +20,8 @@ if ! shopt -oq posix; then
 fi
 
 # Normal prompt
-PS1='\[\033[1;36m\]\u\[\033[1;31m\]@\[\033[1;32m\]\h:\[\033[1;35m\]\w\[\033[1;31m\]\$\[\033[0m\] '
+PS1='\[\033[1;36m\]\u\[\033[1;31m\]@\[\033[1;32m\]\h:\[\033[1;35m\]\w\[\033[1;34m\]$(directory_bookmarks current)\[\033[1;31m\]\$\[\033[0m\] '
+#PS1='\[\033[1;36m\]\u\[\033[1;31m\]@\[\033[1;32m\]\h:\[\033[1;35m\]\w\[\033[1;31m\]\$\[\033[0m\] '
 
 # Power Management Functions
 
@@ -82,6 +83,7 @@ alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias sb='secondbrain'
 alias streams='terminalStreamChecker'
 alias rm='rm-trash-cli'
+alias cheat='cheat -c'
 
 function cal () {
 	unbuffer cal -n 3 "$@" | sed '/^ *$/d'
@@ -188,12 +190,11 @@ alias lastyear='log -d $(date -d "-1 year" +"%y%m%d")'
 alias fatmount='sudo mount -o rw,users,umask=000'
 
 function archiveplaylist() {
-	yt-dlp --cookies-from-browser firefox -J --flat-playlist "$1" | jq '.entries[] | [.title,.channel,.url]| @csv'
-}
-
-function archiveplaylisttoml {
-	playlist_url="$1"
-	yt-dlp --cookies-from-browser firefox --flat-playlist --skip-download -J "$playlist_url" | jq '{title, videos: [.entries[] | {title, channel, id}]}' | yq -t
+	if [[ "$1" == "-t" ]]; then
+		yt-dlp --cookies-from-browser firefox --flat-playlist --skip-download -J "$2" | jq '{title, videos: [.entries[] | {title, channel, id}]}' | yq -t
+	else
+		yt-dlp --cookies-from-browser firefox -J --flat-playlist "$1" | jq '.entries[] | [.title,.channel,.url]| @csv'
+	fi
 }
 
 function sortfile () {
@@ -315,14 +316,21 @@ do_yt-dlp () {
 		esac
 	done
 	
-	
 	local all_args=("${output_format_args[@]}" "${aria_args[@]}" "${metadata_args[@]}" "${cookies_args[@]}" "${format_args[@]}" "${archive_args[@]}" "${other_args[@]}" "$@")
 	/usr/bin/yt-dlp "${all_args[@]}"
 }
 
 ## Alias to allow escaping with backslash
 alias yt-dlp='do_yt-dlp'
-alias yt-playlist='do_yt-dlp --all-metadata --720p --aria --archive'
+
+function yt-playlist () {
+	quality_option="--720p"
+	if [[ "$1" == "--1080p" ]]; then
+		quality_option="--1080p"
+		shift
+	fi
+	do_yt-dlp --playlist-order --all-metadata --firefox-cookies --aria --archive "$quality_option" "$@"
+}
 
 # Quick cd
 
@@ -340,7 +348,6 @@ alias cur='cd ~/Music/CurrentPlaylist/'
 alias dot='cd ~/Programs/dotfiles/'
 alias bac='cd ~/Downloads/BackupMount/'
 alias web='cd ~/Programs/website/GitHubWebsite/'
-alias inst='cd "$HOME/.local/share/multimc/instances/Vanilla 1.21.1/.minecraft"'
 
 # Quick config file editing
 
@@ -395,6 +402,16 @@ export MICRO_TRUECOLOR=1
 export PASSWORD_STORE_CLIP_TIME=120
 
 [ -f ~/Programs/localStuff/aliases.sh ] && source ~/Programs/localStuff/aliases.sh
+
+function to {
+	cd "$(directory_bookmarks get "$1")"
+}
+alias bm='directory_bookmarks add'
+alias bmr='directory_bookmarks remove'
+alias bml='directory_bookmarks list'
+alias bmc='directory_bookmarks current'
+
+alias cdp='cd - > /dev/null'
 
 export _FASD_NOCASE=1
 eval "$(fasd --init auto)"

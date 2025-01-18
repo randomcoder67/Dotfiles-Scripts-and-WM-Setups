@@ -28,7 +28,7 @@ int main() {
 
 	FILE *f;
 	f = fopen("/sys/class/net/wlp0s20f3/statistics/rx_bytes", "r");
-	char buf[100];
+	char buf[100] = {0};
 	fgets(buf, 100, f);
 	fclose(f);
 

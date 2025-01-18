@@ -25,6 +25,7 @@ live_status="$3"
 live_at="$4"
 live_name="$5"
 
+# Xfce panel formats
 if [[ "$display_type" == "xfce" ]]; then
 	if [[ "$live_status" == "notlive" ]]; then
 		open_channel_url="$4"
@@ -55,6 +56,7 @@ if [[ "$display_type" == "xfce" ]]; then
 		echo "<txt><span foreground='#$noInternetColour'>  </span></txt>"
 		echo "<tool>No Internet Connection</tool>"
 	fi
+# i3status formats
 elif [[ "$display_type" == "i3" ]]; then
 	prefix="${channel_name:0:1}:"
 	if [[ "$live_status" == "notlive" ]]; then
@@ -72,6 +74,7 @@ elif [[ "$display_type" == "i3" ]]; then
 	elif [[ "$live_status" == "offline" ]]; then
 		echo "${prefix}<span foreground='#709289'>  </span>"
 	fi
+# Awesome WM formats
 elif [[ "$display_type" == "awesome" ]]; then
 	if [[ "$live_status" == "notlive" ]]; then
 		echo "<span foreground='#efe2e0'>  </span>"
@@ -89,3 +92,4 @@ elif [[ "$display_type" == "awesome" ]]; then
 		echo "<span foreground='#709289'>  </span>"
 	fi
 fi
+# lemonbar formats

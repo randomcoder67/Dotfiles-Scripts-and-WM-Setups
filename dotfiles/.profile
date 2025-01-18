@@ -21,6 +21,7 @@ export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
 
 export EDITOR="nano"
 export VISUAL="micro"
+#export PAGER="bat --wrap auto"
 export BROWSER="firefox"
 export PATH=$PATH:~/.local/bin:~/.npm/bin:~/.local/share/npm/bin
 export TERMINAL="alacritty"

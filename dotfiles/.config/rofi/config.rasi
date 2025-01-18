@@ -1,5 +1,5 @@
 configuration {
-	kb-clear-line: "Control+c";
+	kb-clear-line: "Control+Shift+c";
 	kb-move-front: "Control+z";
 	kb-cancel: ["Alt+F1","Escape"];
 	kb-accept-alt: "Shift+w";

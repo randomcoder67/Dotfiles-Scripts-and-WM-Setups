@@ -39,7 +39,7 @@ int main() {
 	
 	FILE *f;
 	f = fopen("/proc/stat", "r");
-	char buf[100];
+	char buf[100] = {0};
 	fgets(buf, 100, f);
 	//printf("%s\n", buf);
 	fclose(f);
