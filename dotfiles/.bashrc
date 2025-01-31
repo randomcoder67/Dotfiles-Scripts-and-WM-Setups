@@ -181,7 +181,12 @@ alias balance='aacgain -r -m 1 *.m4a'
 alias vol='pactl get-sink-volume @DEFAULT_SINK@ | head -n 1 | cut -d "/" -f 2 | sed "s/ //g"'
 alias rmedir='find . -type d -empty -delete'
 alias serial='sudo cat /sys/devices/virtual/dmi/id/product_serial'
-alias pyweb='python3 -m http.server -d'
+
+function pyweb () {
+	$(sleep 0.5 && firefox "http://0.0.0.0:8000/") &
+	python3 -m http.server -d "$1"
+}
+
 alias rss='newsboat; podboat'
 alias trash-size='du ~/.local/share/Trash/files/ -s -h | cut -f 1'
 alias sync='echo "Syncing"; sync; echo "Done"; lsblk'

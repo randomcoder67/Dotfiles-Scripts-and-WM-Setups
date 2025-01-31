@@ -5,6 +5,7 @@
     "Alt-o": "command:open_ref",
     "Ctrl-D": "DuplicateLine",
     "Ctrl-Delete": "DeleteWordRight",
+    "Ctrl-J": "lua:aspell.togglecheck",
     "Ctrl-K": "DeleteLine",
     "Ctrl-N": "AddTab",
     "Ctrl-O": "IndentLine",

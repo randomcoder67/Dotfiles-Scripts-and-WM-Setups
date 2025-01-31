@@ -1,0 +1,96 @@
+color-link default "#efe2e0,#1e1e1e"
+color-link comment "#928374,#1e1e1e"
+color-link identifier "#709289,#1e1e1e"
+color-link constant "#c25431,#1e1e1e"
+color-link constant.string "#bbbb88,#1e1e1e"
+color-link constant.string.char "#BDE6AD,#1e1e1e"
+color-link constant.bool "#519f50"
+color-link constant.specialChar "#F286C4"
+color-link statement "#e0ba69,#1e1e1e"
+color-link statement.loop "#eeaa88,#1e1e1e"
+color-link ifelse "#c25431,#1e1e1e"
+color-link symbol.operator "#f9f7f3,#1e1e1e"
+color-link preproc "#8f423c,#1e1e1e"
+color-link type "bold #709289,#1e1e1e"
+color-link special "#e0ba69,#1e1e1e"
+color-link underlined "#709289,#1e1e1e"
+color-link error "bold #CB4B16,#1e1e1e"
+color-link todo "bold #D33682,#1e1e1e"
+color-link hlsearch "#282828,#E6DB74"
+color-link statusline "#c9b957,#303030"
+color-link tabbar "#282828,#F8F8F2"
+color-link indent-char "#505050,#1e1e1e"
+color-link line-number "#8da691,#1e1e1e"
+color-link current-line-number "#AAAAAA,#1e1e1e"
+color-link diff-added "#00AF00"
+color-link diff-modified "#FFAF00"
+color-link diff-deleted "#D70000"
+color-link gutter-error "#CB4B16,#1e1e1e"
+color-link gutter-warning "#E6DB74,#1e1e1e"
+color-link cursor-line "#323232"
+color-link color-column "#323232"
+#No extended types; Plain brackets.
+color-link type.extended "default"
+#color-link symbol.brackets "default"
+color-link symbol.tag "#709289,#1e1e1e"
+color-link testThing "#ff00ff,#1e1e1e"
+color-link statement.cRed "#e0ba69,#1e1e1e"
+color-link bracketsTestA "#ff0000,#1e1e1e"
+color-link bracketsTestB "#ffff00,#1e1e1e"
+color-link escape "#F286C4"
+color-link everything "#f9f7f3,#1e1e1e"
+color-link function "#709289"
+color-link new.thing "#ff0000"
+
+# JSON
+color-link json.constant.number "#9580fe,#1e1e1e"
+color-link json.object "#ff0000,#1e1e1e"
+color-link json.key.string "#DD8853,#1e1e1e,bold"
+color-link json.value.string "#a5c261,#1e1e1e"
+color-link json.punctuation "#928374,#1e1e1e"
+color-link json.test "#00ff00,#1e1e1e"
+
+# XML 
+
+color-link xml.identifier "#a5c261,#1e1e1e,bold"
+color-link xml.preproc "#709289,#1e1e1e"
+color-link xml.doctype "#8f423c,#1e1e1e"
+
+# Go
+
+color-link constant.nil "#f9d25b"
+
+# Markdown
+
+color-link markdown.header.one "#8f423c,bold"
+color-link markdown.header.two "#f9d25b,bold"
+color-link markdown.header.three "#709289,bold"
+color-link markdown.header.four "#e0ba69,bold"
+color-link markdown.header.five "#5a7260,bold"
+color-link markdown.header.six "#c25431,bold"
+color-link markdown.line.break "#f9f7f3,#9580fe"
+
+# Lua 
+
+color-link lua.after.dot "#709289,bold"
+
+# Shell 
+
+color-link sh.brackets "#e0ba69,#1e1e1e"
+color-link sh.variable-declaration "#80fdea,#1e1e1e"
+color-link sh.colon.number "#e6e1dc,bold"
+color-link sh.double.equals "#80fdea,bold"
+color-link sh.logic "#e0ba69"
+color-link sh.function "#709289"
+color-link sh.variable "#80fdea,bold"
+
+# Cpp 
+
+color-link cpp.namespace.name "#519f50,bold"
+color-link cpp.namespace "#e0ba69"
+color-link cpp.before.colon "#709289,bold"
+color-link cpp.colon "#f9f7f3"
+
+# C
+
+color-link c.identifier "#e6e1dc,#1e1e1e"

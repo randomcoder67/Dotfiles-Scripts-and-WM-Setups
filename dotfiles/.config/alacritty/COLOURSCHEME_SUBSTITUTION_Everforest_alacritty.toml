@@ -1,0 +1,68 @@
+# Everforest
+[colors.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[colors.footer_bar]
+background = "#282a36"
+foreground = "#f8f8f1"
+
+[colors.hints.end]
+background = "#282a36"
+foreground = "#f1fa8c"
+
+[colors.hints.start]
+background = "#f1fa8c"
+foreground = "#22212d"
+
+[colors.line_indicator]
+background = "None"
+foreground = "None"
+
+# Default colors
+[colors.primary]
+# hard contrast background = = '#1d2021'
+background = '#272d32'
+# soft contrast background = = '#32302f'
+foreground = '#edebe6'
+
+# Normal colors
+[colors.normal]
+black   = '#414b51'
+red     = '#e77e7f'
+green   = '#a6c080'
+yellow  = '#dbbc7f'
+blue    = '#7fbbb3'
+magenta = '#d699b6'
+cyan    = '#83c091'
+white   = '#edebe6'
+
+# Bright colors
+[colors.bright]
+black   = '#414b51'
+red     = '#e67e80'
+green   = '#a7c080'
+yellow  = '#dbbc7f'
+blue    = '#7fbbb3'
+magenta = '#d59ab6'
+cyan    = '#83c092'
+white   = '#edebe6'
+
+[colors.search.focused_match]
+background = "#ffb86c"
+foreground = "#44475a"
+
+[colors.search.matches]
+background = "#50fa7b"
+foreground = "#44475a"
+
+[colors.selection]
+background = "#4f585e"
+text = "CellForeground"
+
+[colors.vi_mode_cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[cursor.style]
+shape = "Beam"

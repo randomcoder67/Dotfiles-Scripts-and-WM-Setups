@@ -7,7 +7,7 @@
 [ -f "$XDG_CACHE_HOME/rc67/bookmarksIcons.sh" ] || "$XDG_DATA_HOME/rc67/hotkey_scripts/addIconsBookmarks.sh"
 
 if [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
-	index=$("$XDG_CACHE_HOME/rc67/bookmarksIcons.sh" | rofi -dmenu -show-icons -i -format "d" -p "Bookmarks")
+	index=$("$XDG_CACHE_HOME/rc67/bookmarksIcons.sh" | rofi -kb-custom-1 "Ctrl+a" -kb-custom-2 "Ctrl+w" -kb-custom-3 "Shift+Return" -dmenu -show-icons -i -format "d" -p "Bookmarks")
 	status=$?
 elif [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
 	selection=$(cat "$XDG_DATA_HOME/rc67/script_data/bookmarks.txt" | sed 's/DELIM.*//g' | cat -n | sed 's/\t/ /g' | fzf --with-nth=2.. -i --expect="ctrl-w,ctrl-a")

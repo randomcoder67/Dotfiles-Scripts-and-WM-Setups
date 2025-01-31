@@ -1,8 +1,9 @@
 {
     "autoclose": false,
-    "colorscheme": "jmbi",
+    "colorscheme": "everforest",
     "ftoptions": false,
     "hlsearch": true,
     "savecursor": true,
-    "softwrap": true
+    "softwrap": true,
+    "aspell.check": "off"
 }
