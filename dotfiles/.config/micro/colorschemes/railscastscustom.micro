@@ -61,7 +61,7 @@ color-link constant.nil "#ce5c00"
 # Markdown 
 
 color-link markdown.header.one "#da4939,bold"
-color-link markdown.header.two "#DD8853,bold"
+color-link markdown.header.two "#dd8853,bold"
 color-link markdown.header.three "#ffc66d,bold"
 color-link markdown.header.four "#a5c261,bold"
 color-link markdown.header.five "#6d9cbe,bold"

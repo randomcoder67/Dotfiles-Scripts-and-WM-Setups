@@ -1,9 +1,9 @@
 {
+    "aspell.check": "off",
     "autoclose": false,
     "colorscheme": "everforest",
     "ftoptions": false,
     "hlsearch": true,
     "savecursor": true,
-    "softwrap": true,
-    "aspell.check": "off"
+    "softwrap": true
 }

@@ -54,13 +54,21 @@ def run(downloadFile):
 		averageKiB = average/1024
 		averageKB = average/1000
 		
+		totalKiB = (oldTotal-initial)/1024
+		totalKB = (oldTotal-initial)/1000
+		
 		totalMiB = ((oldTotal-initial)/1024)/1024
 		totalMB = ((oldTotal-initial)/1000)/1000
 
 		print("\033[A", end="\r")
 		print("\033[A", end="\r")
-		print("Average: " + str(round(averageKiB)) + "KiB/s (" + str(round(averageKB)) + "KB/s)     ")
-		print("Total: " + str(round(totalMiB)) + "MiB (" + str(round(totalMB)) + "MB)     ")
+		
+		if totalMiB > 10:
+			print("Average: " + str(round(averageKiB)) + "KiB/s (" + str(round(averageKB)) + "KB/s)     ")
+			print("Total: " + str(round(totalMiB)) + "MiB (" + str(round(totalMB)) + "MB)     ")
+		else:
+			print("Average: " + str(round(averageKiB)) + "KiB/s (" + str(round(averageKB)) + "KB/s)     ")
+			print("Total: " + str(round(totalKiB)) + "KiB (" + str(round(totalKB)) + "KB)     ")
     
 if __name__ == "__main__":
 	downloadFile = getDownloadFile()

@@ -96,6 +96,10 @@ func findTables(input []string) [][]int {
 
 func calcLengths(thisTable []string) []int {
 	numCells := strings.Count(thisTable[0], "|") - 1
+
+	if numCells < 1 {
+		os.Exit(1)
+	}
 	
 	var columnLengths []int = make([]int, numCells)
 	
