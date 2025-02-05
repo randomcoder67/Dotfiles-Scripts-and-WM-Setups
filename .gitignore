@@ -2,5 +2,6 @@
 /terminal_scripts/timer
 /terminal_scripts/metrictime
 /terminal_scripts/tablealigner
+/terminal_scripts/directory_bookmarks
 /rofi_utils/launcher/target/
 /fake_home/

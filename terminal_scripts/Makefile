@@ -11,6 +11,7 @@ normal:
 	go build -o metrictime metricTime.go
 	go build -o timer timer.go
 	go build -o tablealigner tableAligner.go
+	gcc directory_bookmarks.c -o directory_bookmarks
 
 install:
 	@mkdir -p $(DESTDIR)
@@ -30,6 +31,8 @@ install:
 	cp stuff.py $(DESTDIR)/stuff
 	chmod +x $(DESTDIR)/stuff
 	cp ipod-shuffle-4g.py $$XDG_DATA_HOME/rc67/data/ipod-shuffle-4g.py
+
+	cp directory_bookmarks ${DESTDIR}/directory_bookmarks
 	
 # Add uninstall
 
@@ -39,3 +42,4 @@ clean:
 	rm downloadtime
 	rm metrictime
 	rm timer
+	rm directory_bookmarks
