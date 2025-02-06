@@ -6,10 +6,12 @@
 #include <linux/limits.h>
 
 #define BOOKMARK_FILE_LOCATION "/.local/share/rc67/script_data/directory_bookmarks.txt"
+#define RANGER_BOOKMARK_FILE_LOCATION "/.local/share/rc67/script_data/ranger_directory_bookmarks.conf"
 
 // This script is based on apparix: https://github.com/micans/apparix
 
 static char file_loc[256];
+static char ranger_file_loc[256];
 
 typedef struct {
 	char bookmark_name[11];
@@ -61,6 +63,13 @@ void write_bookmarks(Bookmark* bookmarks, int num_bookmarks) {
 		fprintf(f, "%s %s\n", bookmarks[i].bookmark_name, bookmarks[i].directory_name);
 	}
 	fclose(f);
+
+	FILE* g;
+	g = fopen(ranger_file_loc, "w");
+	for (int i=0; i<num_bookmarks; i++) {
+		fprintf(g, "map go%s cd %s\n", bookmarks[i].bookmark_name, bookmarks[i].directory_name);
+	}
+	fclose(g);
 }
 
 void add_bookmark(char* to_add) {
@@ -161,7 +170,9 @@ int main(int argc, char* argv[]) {
 	}
 
 	memset(file_loc, 0, 256);
+	memset(ranger_file_loc, 0, 256);
 	strcat(strcpy(file_loc, getenv("HOME")), BOOKMARK_FILE_LOCATION);
+	strcat(strcpy(ranger_file_loc, getenv("HOME")), RANGER_BOOKMARK_FILE_LOCATION);
 
 	// Add a new bookmark for current directory
 	if (!strcmp(argv[1], "add")) {

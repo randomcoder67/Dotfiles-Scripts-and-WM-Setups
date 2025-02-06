@@ -350,10 +350,7 @@ alias wor='cd ~/Work/'
 alias loc='cd ~/.local/share/'
 alias bin='cd ~/.local/bin/'
 alias con='cd ~/.config/'
-alias cur='cd ~/Music/CurrentPlaylist/'
-alias dot='cd ~/Programs/dotfiles/'
 alias bac='cd ~/Downloads/BackupMount/'
-alias web='cd ~/Programs/website/GitHubWebsite/'
 
 # Quick config file editing
 
