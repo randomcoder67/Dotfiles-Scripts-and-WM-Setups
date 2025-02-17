@@ -156,7 +156,7 @@ bindsym $mod+i exec --no-startup-id "~/.local/share/rc67/hotkey_scripts/emojipic
 bindsym --release $mod+y exec --no-startup-id "~/.local/share/rc67/hotkey_scripts/xcolor.sh"
 bindsym $mod+Shift+i exec --no-startup-id "~/.config/i3/airplane_mode.sh"
 bindsym Mod1+Ctrl+r restart
-bindsym $mod+Shift+b exec --no-startup-id "feh --no-fehbg --random --bg-fill ~/Pictures/nasa/*"
+bindsym $mod+Shift+b exec --no-startup-id "feh --no-fehbg --random --bg-fill ~/Pictures/nasa/darkWallpapers/*"
 
 ## System
 
@@ -242,6 +242,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a exec --no-startup-id "~/.config/i3/toggle_desktop.sh --temp-workspace"
 bindsym $mod+Shift+a move container to workspace number $ws10
+bindsym $mod+Ctrl+x sticky toggle
 
 # Window Rules
 
@@ -259,9 +260,9 @@ for_window [title="btop"] floating enable, resize set 1200 800, move position ce
 exec --no-startup-id altgrtosuper
 exec --no-startup-id "conky -c ~/.config/conky/conky_i3.conf"
 exec --no-startup-id "picom --backend xrender"
-exec --no-startup-id "xinput set-prop 10 309 1"
+exec --no-startup-id "xinput set-prop 10 310 1"
 exec --no-startup-id "xinput set-prop 10 178 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.5"
-exec --no-startup-id "feh --no-fehbg --random --bg-fill ~/Pictures/nasa/*"
+exec --no-startup-id "feh --no-fehbg --random --bg-fill ~/Pictures/nasa/darkWallpapers/*"
 exec --no-startup-id "~/.config/i3/stream_checkers_background_script.sh"
 exec --no-startup-id "~/.config/i3/cpu_background_script.sh"
 exec --no-startup-id "~/.config/i3/battery_low_warning.sh"
