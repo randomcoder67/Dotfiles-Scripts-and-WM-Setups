@@ -16,6 +16,18 @@ elif [[ "$theme" == "dracula" ]]; then
 	upcomingColour="8CFF82"
 	noInternetColour="fd7fbe"
 	disabledColour="9a7cff"
+elif [[ "$theme" == "jmbi" ]]; then
+	notLiveColour="efe2e0"
+	liveColour="c25431"
+	upcomingColour="bbbb88"
+	noInternetColour="709289"
+	disabledColour="f9d25b"
+elif [[ "$theme" == "doom one" ]]; then
+	notLiveColour="bbc2cf"
+	liveColour="ff6c6b"
+	upcomingColour="98be65"
+	noInternetColour="c678dd"
+	disabledColour="ffd700"
 fi
 
 display_type="$1"
@@ -60,19 +72,19 @@ if [[ "$display_type" == "xfce" ]]; then
 elif [[ "$display_type" == "i3" ]]; then
 	prefix="${channel_name:0:1}:"
 	if [[ "$live_status" == "notlive" ]]; then
-		echo "${prefix}<span foreground='#efe2e0'>  </span>"
+		echo "${prefix}<span foreground='#$notLiveColour'>  </span>"
 	elif [[ "$live_status" == "livetwitch" ]]; then
-		echo "${prefix}<span foreground='#c25431'>  </span>"
+		echo "${prefix}<span foreground='#$liveColour'>  </span>"
 	elif [[ "$live_status" == "liveyoutube" ]]; then
-		echo "${prefix}<span foreground='#c25431'>  </span>"
+		echo "${prefix}<span foreground='#$liveColour'>  </span>"
 	elif [[ "$live_status" == "waitingyoutube" ]]; then
-		echo "${prefix}<span foreground='#bbbb88'>  </span>"
+		echo "${prefix}<span foreground='#$upcomingColour'>  </span>"
 	elif [[ "$live_status" == "liveinyoutube" ]]; then
-		echo "${prefix}<span foreground='#bbbb88'>  </span>"
+		echo "${prefix}<span foreground='#$upcomingColour'>  </span>"
 	elif [[ "$live_status" == "disabled" ]]; then
-		echo "${prefix}<span foreground='#f9d25b'>  </span>"
+		echo "${prefix}<span foreground='#$disabledColour'>  </span>"
 	elif [[ "$live_status" == "offline" ]]; then
-		echo "${prefix}<span foreground='#709289'>  </span>"
+		echo "${prefix}<span foreground='#$noInternetColour'>  </span>"
 	fi
 # Awesome WM formats
 elif [[ "$display_type" == "awesome" ]]; then

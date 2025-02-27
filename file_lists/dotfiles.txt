@@ -36,6 +36,7 @@
 ~/.config/micro/colorschemes/draculacustom.micro
 ~/.config/micro/colorschemes/jmbi.micro
 ~/.config/micro/colorschemes/everforest.micro
+~/.config/micro/colorschemes/doomone.micro
 ~/.config/micro/plug/open_references/open_ref.lua
 ~/.config/micro/plug/micro-autofmt/autofmt.lua
 ~/.config/micro/plug/micro-autofmt/repo.json
@@ -49,6 +50,7 @@
 ~/.local/share/gtksourceview-4/styles/railscasts.xml
 ~/.local/share/rofi/themes/dracula.rasi
 ~/.local/share/rofi/themes/jmbi.rasi
+~/.local/share/rofi/themes/doomone.rasi
 ~/.config/conky/conky_xfce.conf
 ~/.config/conky/lua_round.lua
 ~/.config/conky/clock_settings_xfce

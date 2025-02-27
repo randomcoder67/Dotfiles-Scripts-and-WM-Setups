@@ -1,0 +1,94 @@
+color-link default "#bbc2cf,#282c34"
+color-link comment "#5b6268,#282c34"
+color-link identifier "#51afef,#282c34"
+color-link constant "#ffd700,#282c34"
+color-link constant.string "#ffd700,#282c34"
+color-link constant.string.char "#BDE6AD,#282c34"
+color-link constant.bool "#46d9ff"
+color-link constant.specialChar "#ce5c00"
+color-link statement "#ff6c6b,#282c34"
+color-link symbol.operator "#bbc2cf,#282c34"
+color-link preproc "#c678dd,#282c34"
+color-link type "bold #51afef,#282c34"
+color-link special "#ff6c6b,#282c34"
+color-link underlined "#D33682,#282c34"
+color-link error "bold #CB4B16,#282c34"
+color-link todo "bold #D33682,#282c34"
+color-link hlsearch "#282828,#E6DB74"
+color-link statusline "#282828,#F8F8F2"
+color-link tabbar "#282828,#F8F8F2"
+color-link indent-char "#505050,#282c34"
+color-link line-number "#858585,#282c34"
+color-link current-line-number "#AAAAAA,#282c34"
+color-link diff-added "#00AF00"
+color-link diff-modified "#FFAF00"
+color-link diff-deleted "#D70000"
+color-link gutter-error "#CB4B16,#282c34"
+color-link gutter-warning "#E6DB74,#282c34"
+color-link cursor-line "#323232"
+color-link color-column "#323232"
+#No extended types; Plain brackets.
+color-link type.extended "default"
+#color-link symbol.brackets "default"
+color-link symbol.tag "#51afef,#282c34"
+color-link testThing "#ff00ff,#282c34"
+color-link statement.cRed "#ff6c6b,#282c34"
+color-link bracketsTestA "#ff0000,#282c34"
+color-link bracketsTestB "#ffff00,#282c34"
+color-link escape "#ce5c00"
+color-link everything "#bbc2cf,#282c34"
+color-link function "#98be65"
+color-link new.thing "#ff0000"
+
+# JSON
+color-link json.constant.number "#ffd700,#282c34"
+color-link json.object "#ff0000,#282c34"
+color-link json.key.string "#DD8853,#282c34,bold"
+color-link json.value.string "#a5c261,#282c34"
+color-link json.punctuation "#928374,#282c34"
+color-link json.test "#00ff00,#282c34"
+
+# XML 
+
+color-link xml.identifier "#a5c261,#282c34,bold"
+color-link xml.preproc "#51afef,#282c34"
+color-link xml.doctype "#c678dd,#282c34"
+
+# Go
+
+color-link constant.nil "#ce5c00"
+
+# Markdown 
+
+color-link markdown.header.one "#ff6c6b,bold"
+color-link markdown.header.two "#da8548,bold"
+color-link markdown.header.three "#ffd700,bold"
+color-link markdown.header.four "#98be65,bold"
+color-link markdown.header.five "#51afef,bold"
+color-link markdown.header.six "#c678dd,bold"
+color-link markdown.line.break "#bbc2cf,#ecbe7b"
+
+# Lua 
+
+color-link lua.after.dot "#51afef,bold"
+
+# Shell 
+
+color-link sh.brackets "#ff6c6b,#282c34"
+color-link sh.variable-declaration "#51afef,#282c34"
+color-link sh.colon.number "#e6e1dc,bold"
+color-link sh.double.equals "#51afef"
+color-link sh.logic "#ff6c6b"
+color-link sh.function "#51afef"
+color-link sh.variable "#51afef"
+
+# Cpp 
+
+color-link cpp.namespace.name "#519f50,bold"
+color-link cpp.namespace "#ff6c6b"
+color-link cpp.before.colon "#51afef,bold"
+color-link cpp.colon "#bbc2cf"
+
+# C
+
+color-link c.identifier "#e6e1dc,#282c34"

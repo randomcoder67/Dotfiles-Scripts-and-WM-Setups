@@ -131,6 +131,7 @@ trim_history () {
 	# Remove any usage of rm command
 	sed -i '/^rm .*/d' ~/.bash_history
 	sed -i '/^youtube .*/d' ~/.bash_history
+	sed -i '/^to .*/d' ~/.bash_history
 	#sed -i '/^git add .*/d' ~/.bash_history
 	#sed -i '/^git mv .*/d' ~/.bash_history
 	#sed -i '/^stuff .*/d' ~/.bash_history
