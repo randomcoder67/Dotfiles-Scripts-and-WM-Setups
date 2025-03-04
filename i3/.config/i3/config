@@ -111,6 +111,7 @@ client.placeholder      #F0F0F0 #0c0c0c #ffffff #000000   #F0F0F0
 bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 bindsym $mod+Shift+Return exec xterm
 bindsym $mod+w exec ~/.config/i3/firefox_new_tab.sh
+bindsym $mod+Shift+e exec thunar
 bindsym $mod+s exec --no-startup-id "alacritty -t GoTube -e gotube"
 bindsym $mod+e exec --no-startup-id "alacritty -t ranger -e ranger"
 bindsym $mod+c exec --no-startup-id "alacritty -t qalc -e qalc"
@@ -210,6 +211,7 @@ bindsym $mod+4 workspace number $ws4
 #bindsym $mod+5 workspace number $ws5
 #bindsym $mod+6 workspace number $ws6
 #bindsym $mod+7 workspace number $ws7
+bindsym $mod+a exec --no-startup-id "~/.config/i3/toggle_desktop.sh --temp-workspace"
 
 ### Move Window To Workspace
 
@@ -221,6 +223,7 @@ bindsym $mod+Shift+4 move container to workspace number $ws4
 #bindsym $mod+Shift+5 move container to workspace number $ws5
 #bindsym $mod+Shift+6 move container to workspace number $ws6
 #bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+a move container to workspace number $ws10
 
 ### Move Workspace To Monitor
 
@@ -240,8 +243,6 @@ bindsym $mod+Shift+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-bindsym $mod+a exec --no-startup-id "~/.config/i3/toggle_desktop.sh --temp-workspace"
-bindsym $mod+Shift+a move container to workspace number $ws10
 bindsym $mod+Ctrl+x sticky toggle
 
 # Window Rules
@@ -253,7 +254,7 @@ for_window [class="cavafloating"] floating enable, move to workspace $ws8, move 
 for_window [class="terminalscratchpad"] move to scratchpad
 ## Make certain programs floating
 for_window [title="pulsemixer"] floating enable
-for_window [title="btop"] floating enable, resize set 1200 800, move position center
+for_window [title="btop"] floating enable, resize set 1200 790, move position center
 
 # Autostarts
 
