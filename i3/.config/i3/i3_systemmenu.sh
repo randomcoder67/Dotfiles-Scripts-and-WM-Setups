@@ -8,7 +8,7 @@ confirm=$(echo -en "No\nYes\n" | rofi -dmenu -i -p "Confirm Action: ${action}")
 [[ "$confirm" == "Yes" ]] || exit
 
 if [[ "$action" == "Lock" ]]; then
-	i3lock -i ~/Pictures/nasa/auroraIdaho.png
+	i3lock -i ~/.config/rc67/lock_screen_background.png
 elif [[ "$action" == "Log Out" ]]; then
 	i3-msg exit
 elif [[ "$action" == "Quick Sleep" ]]; then

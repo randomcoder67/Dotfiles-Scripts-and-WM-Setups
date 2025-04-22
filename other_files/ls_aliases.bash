@@ -20,6 +20,20 @@ alias lda='/usr/bin/ls --group-directories-first -N -1 -h --color=auto -d */ .*/
 alias lsd='/usr/bin/ls --group-directories-first -N -h --color=auto -d */ 2> /dev/null'
 alias lsda='/usr/bin/ls --group-directories-first -N -h --color=auto -d */ .*/ 2> /dev/null'
 
+### For FAT filesystems, to make it readble
+
+alias lfat='/usr/bin/ls --group-directories-first --file-type -N -1 -h --color=no'
+alias lsfat='/usr/bin/ls --group-directories-first --file-type -N -h --color=no'
+alias lafat='/usr/bin/ls --group-directories-first --file-type -NA -1 -h --color=no'
+alias lsafat='/usr/bin/ls --group-directories-first --file-type -NA -h --color=no'
+
+### Directories Only (FAT)
+
+alias ldfat='/usr/bin/ls --group-directories-first -N -1 -h --color=no -d */ 2> /dev/null'
+alias ldafat='/usr/bin/ls --group-directories-first -N -1 -h --color=no -d */ .*/ 2> /dev/null'
+alias lsdfat='/usr/bin/ls --group-directories-first -N -h --color=no -d */ 2> /dev/null'
+alias lsdafat='/usr/bin/ls --group-directories-first -N -h --color=no -d */ .*/ 2> /dev/null'
+
 ## File Counting
 
 ### Normal

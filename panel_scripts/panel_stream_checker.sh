@@ -44,6 +44,7 @@ if [[ "$youtubeChannelAt" != "NONE" ]]; then
 	# Download and check for internet
 	if ! curl "https://www.youtube.com/@${youtubeChannelAt}/live" > "${SAVE_LOC}/${channelName}YouTube.html"; then
 		"$FORMATTER_SCRIPT" "$display_type" "$channelName" "offline"
+		exit
 	# Check for live status
 	elif grep -q "Pop-out chat" "${SAVE_LOC}/${channelName}YouTube.html"; then
 		# Check if stream scheduled

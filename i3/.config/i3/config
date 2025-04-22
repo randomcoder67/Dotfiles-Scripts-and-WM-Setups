@@ -10,7 +10,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i ~/.config/rc67/lock_screen_background.png --nofork
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -21,18 +21,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-#set $ws1 "1:SYS"
-#set $ws2 "2:WWW"
-#set $ws3 "3:DEV"
-#set $ws4 "4:WRK"
-#set $ws5 "5:VID"
-#set $ws6 "6:GFX"
-#set $ws7 "7:OTH"
 set $ws1 "1:WWW"
 set $ws2 "2:DEV"
 set $ws3 "3:WRK"
 set $ws4 "4:OTH"
-#set $ws9 "9:EXT"
 set $ws8 "8:DSK"
 set $ws10 "10:TMP"
 
@@ -137,7 +129,7 @@ bindsym $mod+Shift+n exec --no-startup-id "backgroundnoise --play"
 
 ### Remote Music
 
-bindsym $mod+Shift+p exec --no-startup-id "~/Programs/localStuff/auto_music_control.sh -r"
+bindsym $mod+Shift+u exec --no-startup-id "~/Programs/localStuff/auto_music_control.sh -r"
 
 ### Songrec
 
@@ -158,6 +150,7 @@ bindsym --release $mod+y exec --no-startup-id "~/.local/share/rc67/hotkey_script
 bindsym $mod+Shift+i exec --no-startup-id "~/.config/i3/airplane_mode.sh"
 bindsym Mod1+Ctrl+r restart
 bindsym $mod+Shift+b exec --no-startup-id "feh --no-fehbg --random --bg-fill ~/Pictures/nasa/darkWallpapers/*"
+bindsym $mod+z exec --no-startup-id ~/.config/i3/zoom.sh
 
 ## System
 
@@ -249,20 +242,23 @@ bindsym $mod+Ctrl+x sticky toggle
 
 for_window [instance="mainfloating"] floating enable, move to workspace $ws8, move position 70 100
 for_window [instance="otherfloating"] floating enable, move to workspace $ws8, move position 70 800
-for_window [class="Conky"] move to workspace $ws8, floating enabled
+for_window [class="Conky"] move to workspace $ws8, floating enable
 for_window [class="cavafloating"] floating enable, move to workspace $ws8, move position 70 750
 for_window [class="terminalscratchpad"] move to scratchpad
 ## Make certain programs floating
 for_window [title="pulsemixer"] floating enable
 for_window [title="btop"] floating enable, resize set 1200 790, move position center
+for_window [title="htop"] floating enable, resize set 1200 790, move position center
+for_window [title="nethogs"] floating enable, resize set 1200 790, move position center
+for_window [title="intel-gpu-top"] floating enable, resize set 1200 790, move position center
+for_window [class="Boomer"] floating enable, resize set 1800 1100, move position center
 
 # Autostarts
 
 exec --no-startup-id altgrtosuper
 exec --no-startup-id "conky -c ~/.config/conky/conky_i3.conf"
 exec --no-startup-id "picom --backend xrender"
-exec --no-startup-id "xinput set-prop 10 310 1"
-exec --no-startup-id "xinput set-prop 10 178 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.5"
+exec --no-startup-id "~/Programs/localStuff/redoXinput.sh"
 exec --no-startup-id "feh --no-fehbg --random --bg-fill ~/Pictures/nasa/darkWallpapers/*"
 exec --no-startup-id "~/.config/i3/stream_checkers_background_script.sh"
 exec --no-startup-id "~/.config/i3/cpu_background_script.sh"

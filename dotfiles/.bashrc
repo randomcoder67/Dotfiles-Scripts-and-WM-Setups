@@ -58,7 +58,6 @@ lt () {
 	lite-xl "$@" & disown
 }
 
-
 # Basic Aliases/Functions
 
 alias grep='grep -i --color=auto'
@@ -388,6 +387,14 @@ function restorebashhistory () {
 	mv /tmp/all_history "$HOME/.bash_history"
 }
 
+function storage () {
+	root_line=$(df -h | grep ' /$' | tr -s " ")
+	used=$(echo "$root_line" | cut -d " " -f 3)
+	free=$(echo "$root_line" | cut -d " " -f 4)
+	echo "Used: ${used}"
+	echo "Free: ${free}"
+}
+
 function do_pkill () {
 	pkill "$@"
 	[ "$?" == "0" ] || echo "Program not found"
@@ -398,8 +405,8 @@ alias pkill='do_pkill'
 source "$HOME/.local/share/rc67/data/autocompletion.bash"
 source "$HOME/.local/share/rc67/data/ls_aliases.bash"
 
-HISTSIZE=60000
-HISTFILESIZE=60000
+HISTSIZE=80000
+HISTFILESIZE=80000
 
 export HISTCONTROL=ignoreboth:erasedups
 export MICRO_TRUECOLOR=1

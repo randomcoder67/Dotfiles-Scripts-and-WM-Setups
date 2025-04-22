@@ -13,4 +13,5 @@
 ~/.config/i3/i3_systemmenu.sh
 ~/.config/i3/window-tool.py
 ~/.config/i3/airplane_mode.sh
+~/.config/i3/zoom.sh
 ~/.config/dunst/dunstrc

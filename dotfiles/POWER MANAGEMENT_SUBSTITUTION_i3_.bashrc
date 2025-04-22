@@ -47,5 +47,5 @@ log-out () {
 ## Lock screen with confirmation
 lock () {
 	read -p "Lock Screen? (y/N) " yesOrNoLock
-	[[ "$yesOrNoLock" == "y" ]] && i3lock -i ~/Pictures/nasa/auroraIdaho.png
+	[[ "$yesOrNoLock" == "y" ]] && i3lock -i "$HOME/.config/rc67/lock_screen_background.png"
 }

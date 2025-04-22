@@ -2,6 +2,8 @@
     "Alt-,": "PreviousTab",
     "Alt-.": "NextTab",
     "Alt-/": "lua:comment.comment",
+    "Alt-[": "CursorDown,CursorDown,CursorDown,CursorDown,CursorDown",
+    "Alt-]": "CursorUp,CursorUp,CursorUp,CursorUp,CursorUp",
     "Alt-o": "command:open_ref",
     "Ctrl-D": "DuplicateLine",
     "Ctrl-Delete": "DeleteWordRight",
